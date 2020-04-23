@@ -7,7 +7,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-4"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Исходящий документ"
@@ -17,7 +16,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-4"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Протокол"
@@ -172,13 +170,11 @@
                                 <div class="mt-3">
                                     <v-btn
                                             color="#fff"
-                                            v-on="on"
                                             class="uzbekneftegaz-new-btn nf-uzbekneftegaz-new-border"
                                     >
                                         kiruvchilar bo’yicha
                                     </v-btn>
                                     <v-btn
-                                            v-on="on"
                                             class="uzbekneftegaz-new-btn nf-uzbekneftegaz-new-border active ml-3"
                                     >
                                         Chiquvchilar bo’yicha
@@ -219,7 +215,6 @@
         <v-autocomplete
                 outlined
                 class="nf-bor-radius mt-4"
-                v-model="value"
                 :items="items"
                 dense
                 label="Исходящее письмо-Исходящее письмо"
@@ -228,7 +223,6 @@
         <v-autocomplete
                 outlined
                 class="nf-bor-radius mt-4"
-                v-model="value"
                 :items="items"
                 dense
                 label="01"

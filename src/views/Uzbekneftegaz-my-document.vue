@@ -58,8 +58,6 @@
         <v-row>
             <v-col xl="2">
                 <v-menu
-
-                        v-model="menu3"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -96,7 +94,6 @@
             <v-col xl="2">
                 <v-menu
 
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"

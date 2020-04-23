@@ -6,7 +6,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Fuqarolarning murojaatlari"
@@ -16,7 +15,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Ариза"
@@ -31,7 +29,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Navoiy viloyati"
@@ -40,7 +37,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Zarafshon shahri"
@@ -49,7 +45,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                 ></v-autocomplete>
@@ -59,7 +54,6 @@
                         <v-autocomplete
                                 outlined
                                 class="nf-bor-radius mt-2"
-                                v-model="value"
                                 :items="items"
                                 dense
                         ></v-autocomplete>
@@ -91,7 +85,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                 ></v-autocomplete>
@@ -99,7 +92,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                 ></v-autocomplete>
@@ -107,7 +99,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                 ></v-autocomplete>
@@ -225,7 +216,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                 ></v-autocomplete>

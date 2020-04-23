@@ -1,57 +1,57 @@
 <template xmlns:v-slot="v-slo//www.w3.org/1999/XSL/Transform">
-   <div>
-       <v-container class="pl-9 pr-9 pl-lg-4 pr-lg-4">
-           <div class="ml-3">
-               <v-row>
-                   <ul class="nf-resolution-center-list pt-2 pb-2">
-                       <li class="active">Hujjat</li>
-                       <li>Topshiriqlar tarixi</li>
-                       <li>Ijro qadamlari</li>
-                       <li> Tahrirlash</li>
-                   </ul>
-               </v-row>
-           </div>
-       </v-container>
-       <v-divider></v-divider>
-       <v-container class="pl-9 pr-9 pl-lg-4 pr-lg-4">
-           <v-row class="mt-2">
-               <v-col xl="10">
-                   <div class="chancellery-send-document">
-                       <div>
-                           <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
-                           <p>Приказы</p>
-                       </div>
-                       <div>
-                           <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
-                           <p>Приказы</p>
-                       </div>
-                       <div>
-                           <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
-                           <p>Приказы</p>
-                       </div>
-                       <div>
-                           <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
-                           <p>Приказы</p>
-                       </div>
-                       <div>
-                           <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
-                           <p>Приказы</p>
-                       </div>
-                       <div>
-                           <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
-                           <p>Приказы</p>
-                       </div>
-                       <div>
-                           <p class="uzbekneftegaz-resolution">Hujjat teglari</p>
-                           <v-chip color="#00a5e2" class="text-uppercase" dark>qo'shish</v-chip>
-                       </div>
-                   </div>
-               </v-col>
-           </v-row>
+    <div>
+        <v-container class="pl-9 pr-9 pl-lg-4 pr-lg-4">
+            <div class="ml-3">
+                <v-row>
+                    <ul class="nf-resolution-center-list pt-2 pb-2">
+                        <li class="active">Hujjat</li>
+                        <li>Topshiriqlar tarixi</li>
+                        <li>Ijro qadamlari</li>
+                        <li> Tahrirlash</li>
+                    </ul>
+                </v-row>
+            </div>
+        </v-container>
+        <v-divider></v-divider>
+        <v-container class="pl-9 pr-9 pl-lg-4 pr-lg-4">
+            <v-row class="mt-2">
+                <v-col xl="10">
+                    <div class="chancellery-send-document">
+                        <div>
+                            <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
+                            <p>Приказы</p>
+                        </div>
+                        <div>
+                            <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
+                            <p>Приказы</p>
+                        </div>
+                        <div>
+                            <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
+                            <p>Приказы</p>
+                        </div>
+                        <div>
+                            <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
+                            <p>Приказы</p>
+                        </div>
+                        <div>
+                            <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
+                            <p>Приказы</p>
+                        </div>
+                        <div>
+                            <p class="uzbekneftegaz-resolution">Qabul qiluvchilar</p>
+                            <p>Приказы</p>
+                        </div>
+                        <div>
+                            <p class="uzbekneftegaz-resolution">Hujjat teglari</p>
+                            <v-chip color="#00a5e2" class="text-uppercase" dark>qo'shish</v-chip>
+                        </div>
+                    </div>
+                </v-col>
+            </v-row>
 
-           <div class="">
-               <v-row class="mt-12 pa-2 align-center">
-                   <v-col xl="2" lg="3">
+            <div class="">
+                <v-row class="mt-12 pa-2 align-center">
+                    <v-col xl="2" lg="3">
                         <span>
                             <svg height="25" viewBox="-79 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
                                 <path d="m353.101562 485.515625h-353.101562v-485.515625h273.65625l79.445312 79.449219zm0 0"
@@ -70,104 +70,109 @@
                                     fill="#fff"/>
                             </svg>
                         </span>
-                       <span class="ml-1">ПРИКАЗ № 13.PDF (2 MB)</span>
-                   </v-col>
-                   <v-col xl="2" lg="2">
-                       <span class="uzbekneftegaz-resolution-download">Yuklab olish</span>
-                   </v-col>
-               </v-row>
+                        <span class="ml-1">ПРИКАЗ № 13.PDF (2 MB)</span>
+                    </v-col>
+                    <v-col xl="2" lg="2">
+                        <span class="uzbekneftegaz-resolution-download">Yuklab olish</span>
+                    </v-col>
+                </v-row>
 
-               <div class="mt-2">
-                   <v-dialog
-                           v-model="dialog"
-                           width="600"
-                   >
-                       <template v-slot:activator="{ on }">
-                           <v-btn
-                                   color="#ff7d31"
-                                   dark
-                                   v-on="on"
-                                   class="chancellery-send-doc-recipients"
-                           >
-                               Fayl qo'shish
-                           </v-btn>
-                       </template>
-                       <v-card>
-                           <v-card-title
-                                   class="headline "
-                                   primary-title
-                           >
-                               Fayl biriktirmasi
-                           </v-card-title>
+                <div class="mt-2">
+                    <v-dialog
+                            v-model="dialog"
+                            width="600"
+                    >
+                        <template v-slot:activator="{ on }">
+                            <v-btn
+                                    color="#ff7d31"
+                                    dark
+                                    v-on="on"
+                                    class="chancellery-send-doc-recipients"
+                            >
+                                Fayl qo'shish
+                            </v-btn>
+                        </template>
+                        <v-card>
+                            <v-card-title
+                                    class="headline "
+                                    primary-title
+                            >
+                                Fayl biriktirmasi
+                            </v-card-title>
 
-                           <v-card-text>
-                               <div class="text-center">
-                                   <div class="">
-                                       <div>
-                                           <svg height="90" width="90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 534 534" enable-background="new 0 0 534 534" xml:space="preserve">
-                                                <path fill="#F4F4F4" d="M281.1,31.3c1,5.1,1.6,10.3,1.6,15.6v15.6H534V31.3H281.1z M251.4,46.9c0-25.9-21.1-46.9-46.9-46.9H0    v393.2h112.2L267,238.4l154.8,154.8H534V93.9H251.4V46.9z"/>
-                                                <path fill="#469ECE" d="M305.4,363.6h42.5L267,282.6l-80.9,80.9h42.5V534h76.8V363.6z M305.4,363.6"/>
+                            <v-card-text>
+                                <div class="text-center">
+                                    <div class="">
+                                        <div>
+                                            <svg height="90" width="90" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"
+                                                 x="0px" y="0px" viewBox="0 0 534 534"
+                                                 enable-background="new 0 0 534 534" xml:space="preserve">
+                                                <path fill="#F4F4F4"
+                                                      d="M281.1,31.3c1,5.1,1.6,10.3,1.6,15.6v15.6H534V31.3H281.1z M251.4,46.9c0-25.9-21.1-46.9-46.9-46.9H0    v393.2h112.2L267,238.4l154.8,154.8H534V93.9H251.4V46.9z"/>
+                                                <path fill="#469ECE"
+                                                      d="M305.4,363.6h42.5L267,282.6l-80.9,80.9h42.5V534h76.8V363.6z M305.4,363.6"/>
                                         </svg>
-                                       </div>
-                                       <p class="link-color nf-sime mt-4">Faylni uzatish</p>
-                                   </div>
-                                   <v-btn class="nf-bor-radius white--text mt-6" color="#00a5e2" large>
-                                       faylni tanlang
-                                   </v-btn>
-                               </div>
+                                        </div>
+                                        <p class="link-color nf-sime mt-4">Faylni uzatish</p>
+                                    </div>
+                                    <v-btn class="nf-bor-radius white--text mt-6" color="#00a5e2" large>
+                                        faylni tanlang
+                                    </v-btn>
+                                </div>
 
-                           </v-card-text>
+                            </v-card-text>
 
-                           <v-card-title
-                                   class="headline grey lighten-2"
-                                   primary-title
-                           >
-                               <v-spacer></v-spacer>
-                               <div class="nf-dialog-btn">
-                                   <v-btn class="nf-bor-radius ml-5 white--text" color="#ff7d31" large>
-                                       bekor qilmoq
-                                   </v-btn>
-                                   <v-btn class="nf-bor-radius white--text ml-5" color="#00a5e2" large>
-                                       saqlash
-                                   </v-btn>
-                               </div>
-                               <v-spacer></v-spacer>
-                           </v-card-title>
-                       </v-card>
-                   </v-dialog>
-               </div>
-               <v-row class="mt-12">
-                   <v-col xl="6" lg="6">
-                       <p class="mt-5">
-                           ПРИКАЗ - №13 от 13.01.2020г. - О дополнительных мерах по бесперебойному
-                           обеспечению потребителей нефтепродуктами
-                       </p>
-                       <p class="uzbekneftegaz-resolution-person mt-12 ">
-                           Н.К.Шамсидинова
-                       </p>
-                   </v-col>
-               </v-row>
-           </div>
-           <div class="mt-12">
-               <v-dialog
-                       v-model="dialog"
-                       width="600"
-               >
-                   <template v-slot:activator="{ on }">
-                       <v-btn class="nf-bor-radius white--text" v-on="on" color="#00a5e2" large>
-                           hujjatni yuborish
-                       </v-btn>
-                   </template>
-                   <v-card>
-                       <v-card-title
-                               class="headline "
-                               primary-title
-                       >
-                           Qabul qiluvchilarni tanlang
-                       </v-card-title>
-                       <v-card-text>
-                           <p class="nf-sime">1.”Нефтегаз” АЖ
-                               <span class="ml-5">
+                            <v-card-title
+                                    class="headline grey lighten-2"
+                                    primary-title
+                            >
+                                <v-spacer></v-spacer>
+                                <div class="nf-dialog-btn">
+                                    <v-btn class="nf-bor-radius ml-5 white--text" color="#ff7d31" large>
+                                        bekor qilmoq
+                                    </v-btn>
+                                    <v-btn class="nf-bor-radius white--text ml-5" color="#00a5e2" large>
+                                        saqlash
+                                    </v-btn>
+                                </div>
+                                <v-spacer></v-spacer>
+                            </v-card-title>
+                        </v-card>
+                    </v-dialog>
+                </div>
+                <v-row class="mt-12">
+                    <v-col xl="6" lg="6">
+                        <p class="mt-5">
+                            ПРИКАЗ - №13 от 13.01.2020г. - О дополнительных мерах по бесперебойному
+                            обеспечению потребителей нефтепродуктами
+                        </p>
+                        <p class="uzbekneftegaz-resolution-person mt-12 ">
+                            Н.К.Шамсидинова
+                        </p>
+                    </v-col>
+                </v-row>
+            </div>
+            <div class="mt-12">
+                <v-dialog
+                        v-model="dialog2"
+                        width="600"
+                >
+                    <template v-slot:activator="{ on }">
+                        <v-btn class="nf-bor-radius white--text" v-on="on" color="#00a5e2" large>
+                            hujjatni yuborish
+                        </v-btn>
+                    </template>
+                    <v-card>
+                        <v-card-title
+                                class="headline "
+                                primary-title
+                        >
+                            Qabul qiluvchilarni tanlang
+                        </v-card-title>
+                        <v-card-text>
+                            <p class="nf-sime">1.”Нефтегаз” АЖ
+                                <span class="ml-5">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="12px" height="12px"><path
                                 fill="#a8a8a8"
                                 d="M21 24.15L8.857 36.293 4.707 32.143 16.85 20 4.707 7.857 8.857 3.707 21 15.85 33.143 3.707 37.293 7.857 25.15 20 37.293 32.143 33.143 36.293z"></path><path
@@ -175,33 +180,35 @@
                                 d="M33.143,4.414l3.443,3.443L25.15,19.293L24.443,20l0.707,0.707l11.436,11.436l-3.443,3.443 L21.707,24.15L21,23.443l-0.707,0.707L8.857,35.586l-3.443-3.443L16.85,20.707L17.557,20l-0.707-0.707L5.414,7.857l3.443-3.443 L20.293,15.85L21,16.557l0.707-0.707L33.143,4.414 M33.143,3L21,15.143L8.857,3L4,7.857L16.143,20L4,32.143L8.857,37L21,24.857 L33.143,37L38,32.143L25.857,20L38,7.857L33.143,3L33.143,3z">
                         </path></svg>
                     </span>
-                           </p>
-                           <template>
-                               <v-treeview
-                                       selectable
-                                       :items="items"
-                                       class="nf-chancellery-send-dialog-selected"
-                               >
-                               </v-treeview>
-                           </template>
-                       </v-card-text>
-                       <v-card-title
-                               class="headline grey lighten-2"
-                               primary-title
-                       >
-                           <v-spacer></v-spacer>
-                           <v-btn color="#ff7d31" class="white--text">OK</v-btn>
-                           <v-spacer></v-spacer>
-                       </v-card-title>
-                   </v-card>
-               </v-dialog>
-           </div>
-       </v-container>
-   </div>
+                            </p>
+                            <template>
+                                <v-treeview
+                                        selectable
+                                        :items="items"
+                                        class="nf-chancellery-send-dialog-selected"
+                                >
+                                </v-treeview>
+                            </template>
+                        </v-card-text>
+                        <v-card-title
+                                class="headline grey lighten-2"
+                                primary-title
+                        >
+                            <v-spacer></v-spacer>
+                            <v-btn color="#ff7d31" class="white--text">OK</v-btn>
+                            <v-spacer></v-spacer>
+                        </v-card-title>
+                    </v-card>
+                </v-dialog>
+            </div>
+        </v-container>
+    </div>
 </template>
 <script>
     export default {
         data: () => ({
+            dialog: false,
+            dialog2: false,
             items: [
                 {
                     id: 1,
@@ -215,8 +222,8 @@
                                     id: 3,
                                     name: 'src :',
                                     children: [
-                                        { id: 4, name: 'index : ts' },
-                                        { id: 5, name: 'bootstrap : ts' },
+                                        {id: 4, name: 'index : ts'},
+                                        {id: 5, name: 'bootstrap : ts'},
                                     ],
                                 },
                             ],
@@ -229,9 +236,9 @@
                                     id: 7,
                                     name: 'src :',
                                     children: [
-                                        { id: 8, name: 'v-btn : ts' },
-                                        { id: 9, name: 'v-card : ts' },
-                                        { id: 10, name: 'v-window : ts' },
+                                        {id: 8, name: 'v-btn : ts'},
+                                        {id: 9, name: 'v-card : ts'},
+                                        {id: 10, name: 'v-window : ts'},
                                     ],
                                 },
                             ],
@@ -246,13 +253,13 @@
                             id: 12,
                             name: 'Tutorials :',
                             children: [
-                                { id: 13, name: 'Basic layouts : mp4' },
-                                { id: 14, name: 'Advanced techniques : mp4' },
-                                { id: 15, name: 'All about app : dir' },
+                                {id: 13, name: 'Basic layouts : mp4'},
+                                {id: 14, name: 'Advanced techniques : mp4'},
+                                {id: 15, name: 'All about app : dir'},
                             ],
                         },
-                        { id: 16, name: 'Intro : mov' },
-                        { id: 17, name: 'Conference introduction : avi' },
+                        {id: 16, name: 'Intro : mov'},
+                        {id: 17, name: 'Conference introduction : avi'},
                     ],
                 },
             ],

@@ -6,7 +6,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Kiruvchi hujjat"
@@ -16,7 +15,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Хат"
@@ -50,7 +48,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                 ></v-autocomplete>
@@ -162,7 +159,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                 ></v-autocomplete>
@@ -259,7 +255,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-2"
-                        v-model="value"
                         :items="items"
                         dense
                         label="А.А. Руководилов"

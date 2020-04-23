@@ -206,6 +206,8 @@
 
         data: () => ({
             date: new Date().toISOString().substr(0, 10),
+            menu: false,
+            menu2: false,
 
             headers: [
                 {

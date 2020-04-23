@@ -24,7 +24,6 @@
                                         color="primary"
                                         :events="events"
                                         :event-color="getEventColor"
-                                        :now="today"
                                         @click:event="showEvent"
                                         @click:date="viewDay"
                                         @change="updateRange"

@@ -19,7 +19,7 @@
         </v-btn>
         <v-list>
             <v-list-item-group
-                    v-model="group"
+                    v-model="groupHandler"
                     active-class="deep-purple--text text--accent-4"
                     dark
             >
@@ -53,7 +53,7 @@
                         <v-list-item-title>Hujjat yaratmoq</v-list-item-title>
                     </v-list-item>
                 </router-link>
-                <router-link>
+                <router-link to="/">
                     <v-list-item>
                         <v-list-item-icon>
                         <span>
@@ -98,7 +98,7 @@
                     <v-list-item-title>Mening hujjatlarim</v-list-item-title>
                 </v-list-item>
                 </router-link>
-                <router-link to="">
+                <router-link to="/">
                 <v-list-item>
                     <v-list-item-icon>
                         <span>
@@ -115,7 +115,7 @@
                     <v-list-item-title>Mening bo’limim hujjatlari</v-list-item-title>
                 </v-list-item>
                 </router-link>
-                <router-link to="">
+                <router-link to="/">
                 <v-list-item>
                     <v-list-item-icon>
                         <span>
@@ -155,6 +155,17 @@
         props: ["options", "group"],
         data() {
             return {};
+        },
+        computed: {
+            groupHandler: {
+                get () {
+                    return this.group
+                },
+                set (val) {
+                    this.$emit('update:group', val)
+                }
+
+            },
         },
         methods: {
             sidebarChangeView() {

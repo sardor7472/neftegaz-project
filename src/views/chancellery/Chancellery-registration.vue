@@ -18,7 +18,6 @@
                             <v-autocomplete
                                     outlined
                                     class="nf-bor-radius mt-2"
-                                    v-model="value"
                                     :items="items"
                                     dense
                                     label="1/ 1/"
@@ -74,7 +73,6 @@
                             <v-autocomplete
                                     outlined
                                     class="nf-bor-radius mt-2"
-                                    v-model="value"
                                     :items="items"
                                     dense
                                     label="Filled"
@@ -192,6 +190,7 @@
     export default {
 
         data: () => ({
+            menu2: '',
             date: new Date().toISOString().substr(0, 10),
             items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
         }),

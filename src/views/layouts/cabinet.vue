@@ -2,7 +2,7 @@
     <v-app id="sandbox">
         <left-sidebar
                 :options="primaryDrawer"
-                :group="group"
+                :group.sync="group"
         />
         <v-app-bar class="elevation-1" height="75" :clipped-left="primaryDrawer.clipped" app>
             <v-app-bar-nav-icon

@@ -94,7 +94,6 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-2"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Filled"
@@ -121,7 +120,6 @@
                         <v-autocomplete
                                 outlined
                                 class="nf-bor-radius mt-2"
-                                v-model="value"
                                 :items="items"
                                 dense
                                 label="Ko’rsatilmagan"
