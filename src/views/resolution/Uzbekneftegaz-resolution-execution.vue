@@ -1,7 +1,7 @@
 <template xmlns:v-slot="v-slo//www.w3.org/1999/XSL/Transform">
     <v-container class="pl-9 pr-9 pl-lg-4 pr-lg-4">
         <v-row>
-            <v-col xl="3" lg="3" class="nf-vertical-right-line">
+            <v-col xl="3" lg="3" md="3" class="nf-vertical-right-line">
                 <p>Hujjatlar ro'yxati</p>
                 <v-text-field
                         outlined
@@ -42,7 +42,7 @@
                 </div>
 
             </v-col>
-            <v-col xl="6" lg="6">
+            <v-col xl="6" lg="6" md="6">
                 <ul class="nf-resolution-center-list nf-bottom-line pb-4">
                     <router-link to="/uzbekneftegaz-resolution">
                         <li class="active"> Резолюция</li>
@@ -58,10 +58,10 @@
                     </router-link>
                 </ul>
                 <template>
-                    <v-treeview :items="items"></v-treeview>
+                    <v-treeview :items="items"> sss</v-treeview>
                 </template>
             </v-col>
-            <v-col xl="3" lg="3" class="nf-vertical-left-line">
+            <v-col xl="3" lg="3" md="3" class="nf-vertical-left-line">
 
                 <div class="">
 
@@ -120,11 +120,11 @@
             items: [
                 {
                     id: 1,
-                    name: '<span>Hujjatni ro’yxatdan o’tkazish </span>      Н.К. Шамсидинова ',
+                    name: 'Hujjatni ro’yxatdan o’tkazish Н.К. Шамсидинова</span>',
                     children: [
                         {
                             id: 2,
-                            name: 'Bajarish uchun       ПРИКАЗ - №13 от 13.01.2020г. - О дополнительных мерах по бесперебойному... ',
+                            name: ' ПРИКАЗ - №13 от 13.01.2020г. - О дополнительных мерах по бесперебойному... ',
                             children: [
                                 {
                                     id: 3,

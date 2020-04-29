@@ -174,6 +174,7 @@
                     :items-per-page="5"
                     class="elevation-1 nf-calendar-table"
             >
+
                 <template v-slot:item.file="{item}">
                     <a :href="item.file">Download book</a>
                 </template>

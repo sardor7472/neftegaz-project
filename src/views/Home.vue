@@ -154,7 +154,20 @@
                     :items="desserts"
                     :items-per-page="5"
                     class="elevation-1 nf-calendar-table"
-            ></v-data-table>
+            >
+                <template v-slot:item="{ item }">
+                    <tr
+                            :key="item.id"
+                            @click="$router.push({name: 'chancellery-jurnal', params: {cardId: item.id}})"
+                            class="tr-class">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>
+                            {{ item.calories }}
+                        </td>
+                    </tr>
+                </template>
+            </v-data-table>
         </template>
     </v-container>
 </template>
@@ -183,31 +196,20 @@
                     value: 'name',
                 },
                 {text: 'temp', value: 'calories'},
-                {text: 'Fat (g)', value: 'fat'},
-                {text: 'Carbs (g)', value: 'carbs'},
-                {text: 'Protein (g)', value: 'protein'},
-                {text: 'Iron (%)', value: 'iron'},
-                {text: 'Iron (%)', value: 'iron'},
             ],
             desserts: [
                 {
                     id: '1',
                     name: 'Frozen Yogurt',
                     calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
+
 
                 },
                 {
                     id: '2',
                     name: 'Frozen Yogurt',
                     calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
+
                 },
 
 

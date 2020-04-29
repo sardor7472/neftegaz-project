@@ -227,9 +227,8 @@
                 dense
                 label="01"
         ></v-autocomplete>
-        <div class="row pa-3 justify-space-between">
-
-            <div>
+        <v-row class="justify-space-between">
+            <v-col md="6">
                 <p>Chiqish raqami</p>
                 <v-text-field
                         outlined
@@ -237,8 +236,8 @@
                         class="nf-bor-radius per-input-element mt-4">
 
                 </v-text-field>
-            </div>
-            <div>
+            </v-col>
+            <v-col md="6">
                 <p>Chiquvchi sana</p>
                 <v-menu
 
@@ -274,8 +273,8 @@
                     </template>
                     <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
                 </v-menu>
-            </div>
-        </div>
+            </v-col>
+        </v-row>
 
         <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
             <v-radio label="DSP/XDFU" value="radio-1"></v-radio>
