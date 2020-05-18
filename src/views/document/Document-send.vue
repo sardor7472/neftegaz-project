@@ -56,7 +56,6 @@
                             <v-autocomplete
                                     outlined
                                     class="nf-bor-radius mt-4"
-                                    v-model="value"
                                     :items="items"
                                     dense
                                     label="Bajarishga"
@@ -140,7 +139,7 @@
                         </vue-custom-scrollbar>
                     </div>
                     <div class="mt-5">
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                        <v-radio-group class="chancellery-jurnal-radio" row>
                             <v-radio label="Chiquvchi" value="radio-1"></v-radio>
                             <v-radio label="Kiruvchi" value="radio-2"></v-radio>
                         </v-radio-group>
@@ -178,7 +177,7 @@
                     </div>
                     <div class="assistend-otpravet-center-radio-element">
                         <p>("Ўзбекнефтгаз" АЖ) Mas’ul ijrochi:</p>
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                        <v-radio-group class="chancellery-jurnal-radio" row>
                             <v-radio label="Chiquvchi" value="radio-1"></v-radio>
                             <v-radio label="Kiruvchi" value="radio-2"></v-radio>
                         </v-radio-group>
@@ -187,7 +186,6 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-4"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Bajarishga"
@@ -196,7 +194,6 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-4"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Bajarishga"
@@ -340,7 +337,6 @@
                         </div>
                     </div>
                     <v-divider></v-divider>
-
                 </div>
             </v-col>
         </v-row>

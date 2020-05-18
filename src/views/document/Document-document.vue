@@ -80,8 +80,6 @@
 
                         </div>
                     </v-layout>
-
-
                     <v-layout class="mt-12 pa-2 align-center">
                         <v-flex row>
                         <span>
@@ -252,20 +250,11 @@
     </v-container>
 </template>
 <script>
-    import vueCustomScrollbar from 'vue-custom-scrollbar'
     export default {
-        components: {
-            vueCustomScrollbar
-        },
         data: () => ({
-            settings: {
-                suppressScrollX: true,
-            },
+
         }),
         methods: {
-            scrollHanle(evt) {
-                console.log(evt)
-            }
         }
     };
 </script>

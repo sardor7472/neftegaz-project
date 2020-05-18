@@ -15,14 +15,14 @@
                     </v-btn>
                 </div>
                 <ul class="appeal-list mt-5">
-                    <li><a href="">Barcha</a><span class="appeal-blog-span">2</span></li>
-                    <li class="active"><a href="">Ish jarayonida</a> <span class="appeal-blog-span">2</span></li>
-                    <li><a href="">Muddati o‘tgan</a></li>
-                    <li><a href="">Bajarildi</a> <span class="appeal-blog-span">2</span></li>
-                    <li><a href="">Muddati o‘tib ijro qilingan</a></li>
-                    <li><a href="">Qayta boshlangan</a></li>
-                    <li><a href="">Tasdiqlashda</a></li>
-                    <li><a href="">Rad etilgan</a></li>
+                    <li><a href="">{{$t('all')}}</a><span class="appeal-blog-span">2</span></li>
+                    <li class="active"><a href="">{{$t('Intheprocessofwork')}}</a> <span class="appeal-blog-span">2</span></li>
+                    <li><a href="">{{$t('Expired')}}</a></li>
+                    <li><a href="">{{$t('Done')}}</a> <span class="appeal-blog-span">2</span></li>
+                    <li><a href="">{{$t('Executedlate')}}</a></li>
+                    <li><a href="">{{$t('Restarted')}}</a></li>
+                    <li><a href="">{{$t('In approval')}}</a></li>
+                    <li><a href="">{{$t('Rejected')}}</a></li>
                 </ul>
             </v-col>
         </v-row>

@@ -46,7 +46,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-1"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Kirish raqami"
@@ -54,7 +53,6 @@
             </v-col>
             <v-col xl="4">
                 <v-menu
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -93,7 +91,6 @@
         <v-row>
             <v-col xl="4">
                 <v-menu
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -153,7 +150,6 @@
             </v-col>
             <v-col cols="12" sm="6" md="4">
                 <v-menu
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -198,8 +194,6 @@
         <v-row>
             <v-col lg="2" xl="2">
                 <v-menu
-
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -235,8 +229,6 @@
             </v-col>
             <v-col lg="2" xl="2">
                 <v-menu
-
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"

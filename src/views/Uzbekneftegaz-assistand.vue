@@ -2,7 +2,7 @@
     <v-container class="pl-9 pr-9 pl-lg-4 pr-lg-4">
         <v-row>
             <v-col lg="3" xl="3">
-                <p>Hujjatlar ro'yxati</p>
+                <p>{{$t('Listofdocuments')}}</p>
                 <v-text-field
                         outlined
                         dense
@@ -19,8 +19,8 @@
 
                 </v-text-field>
                 <ul class="nf-resolution-list">
-                    <li>Mahalliy</li>
-                    <li>Yuqoridan</li>
+                    <li>{{$t('Local')}}</li>
+                    <li>{{$t('From above')}}</li>
                 </ul>
                 <div class="pa-2 nf-resolution-document">
                     <p class="nf-resolution-document-number "><span class="nf-sime">3/5-346</span><span>Кеча соат 17:00 да</span></p>
@@ -41,7 +41,6 @@
                         <span class="nf-sime">Приказ № 13 от 13.01.2020г</span><span>Bildirgi</span></p>
                 </div>
                 <v-dialog
-                        v-model="dialog"
                         width="300"
                 >
                     <template v-slot:activator="{ on }">
@@ -91,7 +90,6 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-2"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Ijro uchun"
@@ -103,7 +101,7 @@
                             label="22.01.2020"
                             class="nf-bor-radius mt-2">
                     </v-text-field>
-                    <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                    <v-radio-group class="chancellery-jurnal-radio" row>
                         <v-radio label="Xodimlar" value="radio-1"></v-radio>
                         <v-radio label="Tegishli tashkilotlar" value="radio-2"></v-radio>
                         <v-radio label="Mintaqaviy bo'linmalar" value="radio-3"></v-radio>
@@ -175,7 +173,7 @@
                         </vue-custom-scrollbar>
                     </div>
                     <div class="mt-5">
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                        <v-radio-group class="chancellery-jurnal-radio" row>
                             <v-radio label="Ўзбекча" value="radio-1"></v-radio>
                             <v-radio label="Русский" value="radio-2"></v-radio>
                         </v-radio-group>
@@ -213,7 +211,7 @@
                     </div>
                     <div class="assistend-otpravet-center-radio-element">
                         <p>("Ўзбекнефтгаз" АЖ) Mas’ul ijrochi:</p>
-                        <v-radio-group class="chancellery-jurnal-radio ml-8" row v-model="radios">
+                        <v-radio-group class="chancellery-jurnal-radio ml-8" row>
                             <v-radio label="ha" value="radio-1"></v-radio>
                             <v-radio label="yo'q" value="radio-2"></v-radio>
                         </v-radio-group>
@@ -222,19 +220,17 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-2"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Ko‘rsatilmagan"
                     ></v-autocomplete>
 
-                    <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                    <v-radio-group class="chancellery-jurnal-radio" row>
                         <v-radio label="Dublikat" value="radio-1"></v-radio>
                     </v-radio-group>
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Har chorakda"
@@ -310,7 +306,6 @@
                         <v-autocomplete
                                 outlined
                                 class="nf-bor-radius mt-4"
-                                v-model="value"
                                 :items="items"
                                 dense
                                 label="Qabul qiluvchini tanlang"

@@ -6,10 +6,8 @@
                     <div class="nf-input-file">
                         <v-image-input
                                 class="nf-input-file-main"
-                                v-model="imageData"
                                 clearable
                                 hideActions
-                                imageMaxScaling="4"
                                 uploadIcon="yangi rasm"
                                 clearIcon="rasmni o’chirish"
                                 image-format="jpeg"
@@ -68,7 +66,6 @@
                             </v-text-field>
                             <p>Tog`ilgan sana</p>
                             <v-menu
-                                    v-model="menu2"
                                     :close-on-content-click="false"
                                     :nudge-right="40"
                                     transition="scale-transition"
@@ -79,8 +76,6 @@
                                     <v-text-field
                                             outlined
                                             dense
-
-                                            v-model="date"
                                             readonly
                                             v-on="on"
                                             class="nf-bor-radius per-input-element mt-2">
@@ -99,13 +94,12 @@
 
                                     </v-text-field>
                                 </template>
-                                <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
+                                <v-date-picker @input="menu2 = false"></v-date-picker>
                             </v-menu>
                             <p class="chancellery-send-doc-paragraph">Jins</p>
                             <v-autocomplete
                                     outlined
                                     class="nf-bor-radius mt-2"
-                                    v-model="value"
                                     :items="items"
                                     dense
                                     label="Erkak"
@@ -114,7 +108,6 @@
                             <v-autocomplete
                                     outlined
                                     class="nf-bor-radius mt-2"
-                                    v-model="value"
                                     :items="items"
                                     dense
                                     label="Bosh mutaxassis"
@@ -125,7 +118,6 @@
                             <v-autocomplete
                                     outlined
                                     class="nf-bor-radius mt-2"
-                                    v-model="value"
                                     :items="items"
                                     dense
                                     label="Qidruvlar bo’limi"

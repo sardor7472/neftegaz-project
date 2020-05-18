@@ -148,7 +148,6 @@
                 </p>
                 <div class="mt-3 mb-5 pl-xl-12">
                     <v-dialog
-                            v-model="dialog"
                             width="600"
                     >
                         <template v-slot:activator="{ on }">
@@ -195,7 +194,7 @@
                                 <div class="">
                                     <p>Ijrochini tanlang</p>
                                     <div class="mt-5">
-                                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                                        <v-radio-group class="chancellery-jurnal-radio" row >
                                             <v-radio label="Tegishli tashkilotlar" value="radio-1"></v-radio>
                                             <v-radio label="Hodimlar" value="radio-2"></v-radio>
                                             <v-radio label="Mintaqaviy bo'linmalar" value="radio-2"></v-radio>
@@ -263,7 +262,6 @@
                                         <v-autocomplete
                                                 outlined
                                                 class="nf-bor-radius mt-1"
-                                                v-model="value"
                                                 :items="items"
                                                 dense
                                                 label="Ko’rsatilmagan"
@@ -281,9 +279,7 @@
                         </v-card>
                     </v-dialog>
                     <v-dialog
-                            v-model="dialog"
                             width="600"
-
                     >
                         <template v-slot:activator="{ on }">
                             <v-btn v-on="on" class="nf-bor-radius white--text" color="#00a5e2" large>
@@ -365,8 +361,29 @@
     </v-container>
 </template>
 <script>
+    import vueCustomScrollbar from 'vue-custom-scrollbar'
     export default {
-
-        data: () => ({}),
+        data: () => ({
+            items:['flkdsfl','jsdlkfj'],
+            settings: {
+                suppressScrollX: true,
+            },
+        }),
+        methods: {
+            scrollHanle(evt) {
+                console.log(evt)
+            }
+        },
+        components: {
+            vueCustomScrollbar
+        },
     };
 </script>
+<style>
+    .scroll-area {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        height: 150px;
+    }
+</style>

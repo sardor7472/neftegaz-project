@@ -6,10 +6,8 @@
                     <div class="nf-input-file">
                         <v-image-input
                                 class="nf-input-file-main"
-                                v-model="imageData"
                                 clearable
                                 hideActions
-                                imageMaxScaling="4"
                                 uploadIcon="Yangi rasm"
                                 clearIcon="rasmni o’chirish"
                                 image-format="jpeg"

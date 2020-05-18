@@ -83,7 +83,6 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-1"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Jurnalni tanlang"
@@ -93,7 +92,6 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-1"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Barcha muddat ichida"
@@ -105,7 +103,6 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-1"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Sanani tanlang"

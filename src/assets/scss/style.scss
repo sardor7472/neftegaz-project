@@ -911,6 +911,9 @@ ul{
     border-radius: 10px;
   }
   .nf-calendar-table{
+    tr{
+      cursor: pointer;
+    }
   }
   .main-calendar-right-blog-btn {
     margin-top: 20px;

@@ -155,7 +155,6 @@
                     <v-divider></v-divider>
                     <div class="mt-3 mb-5">
                         <v-dialog
-                                v-model="dialog"
                                 width="600"
 
                         >
@@ -276,21 +275,12 @@
     </v-container>
 </template>
 <script>
-    import vueCustomScrollbar from 'vue-custom-scrollbar'
     export default {
-        components: {
-            vueCustomScrollbar
-        },
         data: () => ({
             items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
-            settings: {
-                suppressScrollX: true,
-            },
         }),
         methods: {
-            scrollHanle(evt) {
-                console.log(evt)
-            }
+
         }
     };
 </script>

@@ -20,18 +20,11 @@
             <v-spacer></v-spacer>
             <div class="nf-header-select">
                 <v-select class="ml-5"
-                          :items="items"
-                          label="O`ZB"
+                          :items="langs"
+                          label="O'zbek tili"
                           single-line
+                          v-model="$i18n.locale"
                 >
-                    <!--                   <template v-slot:append>-->
-                    <!--                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"-->
-                    <!--                            id="Capa_1" x="0px" y="0px" width="20px" height="12px" viewBox="0 0 284.929 284.929"-->
-                    <!--                            style="enable-background:new 0 0 284.929 284.929;" xml:space="preserve">-->
-                    <!--                    <path d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441   L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082   c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647   c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"/>-->
-                    <!--                </svg>-->
-                    <!--                   </template>-->
-
                 </v-select>
                 <v-select
                         :items="years"
@@ -135,11 +128,16 @@
             footer: {
                 inset: true
             },
-            items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+            langs: ['Uzb', 'Рус', 'Eng'],
+            // langs: ['uz', 'ru', 'en'],
             years: ['2021', '2022', '2023', '2024'],
 
         }),
-        methods: {},
+        methods: {
+            setLocale(locale){
+                this.$i18n.locale = locale
+            },
+        },
         components: {
             LeftSidebar
         }

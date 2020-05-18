@@ -6,10 +6,8 @@
                     <div class="nf-input-file">
                         <v-image-input
                                 class="nf-input-file-main"
-                                v-model="imageData"
                                 clearable
                                 hideActions
-                                imageMaxScaling="4"
                                 uploadIcon="yangi rasm"
                                 clearIcon="rasmni o’chirish"
                                 image-format="jpeg"
@@ -27,7 +25,6 @@
                             <v-autocomplete
                                         outlined
                                         class="nf-bor-radius mt-2"
-                                        v-model="value"
                                         :items="items"
                                         dense
                                         label="А.А. Руководилов"

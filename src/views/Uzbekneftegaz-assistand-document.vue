@@ -24,7 +24,6 @@
                         <v-autocomplete
                                 outlined
                                 class="nf-bor-radius mt-3"
-                                v-model="value"
                                 :items="items"
                                 dense
                                 label="Qabul qiluvchini tanlang"

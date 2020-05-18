@@ -178,7 +178,6 @@
                         <v-autocomplete
                                 outlined
                                 class="nf-bor-radius mt-4"
-                                v-model="value"
                                 :items="items"
                                 dense
                                 label="Qabul qiluvchini tanlang"
@@ -189,7 +188,6 @@
 
         </v-row>
         <v-dialog
-                v-model="dialog"
                 width="700"
         >
             <template v-slot:activator="{ on }">
@@ -217,7 +215,6 @@
                             <v-autocomplete
                                     outlined
                                     class="nf-bor-radius "
-                                    v-model="value"
                                     :items="items"
                                     dense
                                     label="Filled"
