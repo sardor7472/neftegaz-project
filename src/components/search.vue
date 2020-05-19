@@ -4,7 +4,7 @@
             <v-text-field
                     outlined
                     dense
-                    label="Kalit so‘z"
+                    :label="$t('Keyword')"
                     class="nf-bor-radius per-input-element mt-1 pr-6">
                 <template v-slot:append>
                     <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1"
@@ -39,18 +39,18 @@
                                         v-on="on"
                                         large
                                 >
-                                    Qidirish
+                                    {{$t('Search')}}
                                 </v-btn>
                             </template>
-                            <v-list>
-                                <v-list-item
-                                        v-for="(item, index) in items"
-                                        :key="index"
-                                        @click=""
-                                >
-                                    <v-list-item-title>{{ item.title }}</v-list-item-title>
-                                </v-list-item>
-                            </v-list>
+<!--                            <v-list>-->
+<!--                                <v-list-item-->
+<!--                                        v-for="(item, index) in items"-->
+<!--                                        :key="index"-->
+<!--                                        @click=""-->
+<!--                                >-->
+<!--                                    <v-list-item-title>{{ item.title }}</v-list-item-title>-->
+<!--                                </v-list-item>-->
+<!--                            </v-list>-->
                         </v-menu>
                     </div>
                 </template>

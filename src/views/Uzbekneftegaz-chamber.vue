@@ -1,7 +1,7 @@
 <template xmlns:v-slot="v-slo//www.w3.org/1999/XSL/Transform">
     <v-container class="pl-9 pr-9 pr-lg-4 pl-lg-4 mt-9">
         <div class="">
-            <p class="appeal-title">Hisob palatasi topshiriqlari</p>
+            <p class="appeal-title">{{$t('AssignmentsChamberAccounts')}}</p>
         </div>
 
         <v-row class="mt-3">

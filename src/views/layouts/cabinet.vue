@@ -53,7 +53,7 @@
               />
             </svg>
           </span>
-          User Name
+          {{$t('username')}}
           <div class="nf-header-select-person-cabinet">
             <p>
               <span>
@@ -71,7 +71,7 @@
                   />
                 </svg>
               </span>
-              Shaxsiy ma’lumotlar
+              {{$t('Personalinformation')}}
             </p>
             <p>
               <span>
@@ -94,7 +94,7 @@
                   />
                 </svg>
               </span>
-              Chiqish
+              {{$t('Exit')}}
             </p>
           </div>
         </div>
@@ -136,7 +136,6 @@
     </v-content>
     <v-footer :inset="footer.inset" app>
       <span class="px-4">&copy; {{ new Date().getFullYear() }}</span>
-      {{ selectedLanguage }}
     </v-footer>
   </v-app>
 </template>
@@ -156,19 +155,18 @@ export default {
     },
     langs: [
       {
-        text: "Ўзбек",
+        text: "Ўзбек тили",
         value: "uz"
       },
       {
-        text: "Русский",
+        text: "Русский язык",
         value: "ru"
       },
       {
-        text: "English",
+        text: "English language",
         value: "en"
       }
     ],
-    // langs: ['uz', 'ru', 'en'],
     years: ["2021", "2022", "2023", "2024"]
   }),
   methods: {

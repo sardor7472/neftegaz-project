@@ -123,9 +123,9 @@
                         </vue-custom-scrollbar>
                     </div>
                     <div class="mt-5">
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
-                            <v-radio label="Ўзбекча" value="radio-1"></v-radio>
-                            <v-radio label="Русский" value="radio-2"></v-radio>
+                        <v-radio-group class="chancellery-jurnal-radio" row >
+                            <v-radio label="Ўзбекча" ></v-radio>
+                            <v-radio label="Русский" ></v-radio>
                         </v-radio-group>
                     </div>
                     <div class="">
@@ -161,9 +161,9 @@
                     </div>
                     <div class="assistend-otpravet-center-radio-element">
                         <p>("Ўзбекнефтгаз" АЖ) Mas’ul ijrochi:</p>
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
-                            <v-radio label="ha" value="radio-1"></v-radio>
-                            <v-radio label="yo'q" value="radio-2"></v-radio>
+                        <v-radio-group class="chancellery-jurnal-radio" row>
+                            <v-radio label="ha"></v-radio>
+                            <v-radio label="yo'q"></v-radio>
                         </v-radio-group>
                     </div>
                     <div class="assistend-otpravet-center-btn">

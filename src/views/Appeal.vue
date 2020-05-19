@@ -5,7 +5,7 @@
                 <div class="appeal-blog">
                     <p class="appeal-title">Murojaat</p>
                     <v-btn class="nf-bor-radius white--text" color="#00a5e2" large>
-                        Eksport
+                        {{$t('Eksport')}}
                         <span class="ml-2">
                              <svg data-v-47182f1e="" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg"
                                   xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
@@ -34,7 +34,7 @@
                     <v-text-field
                             outlined
                             dense
-                            label="Kirish raqami"
+                            :label="$t('Accessnumber')"
                             class="nf-bor-radius per-input-element mt-1">
 
                     </v-text-field>
@@ -44,15 +44,15 @@
                 <v-text-field
                         outlined
                         dense
-                        label="Chiqish raqami"
+                        :label="$t('Outputnumber')"
                         class="nf-bor-radius per-input-element mt-1">
 
                 </v-text-field>
             </v-col>
             <v-col xl="4" class="pa-1">
                 <v-radio-group class="appeal-radio" row v-model="radios">
-                    <v-radio label="Aniq qidiruv" value="radio-1"></v-radio>
-                    <v-radio label="Я в своде" value="radio-2"></v-radio>
+                    <v-radio :label="$t('Theexactsearch')" value="radio-1"></v-radio>
+                    <v-radio :label="$t('thevault')" value="radio-2"></v-radio>
                 </v-radio-group>
             </v-col>
 
@@ -63,7 +63,7 @@
                     <v-text-field
                             outlined
                             dense
-                            label="Qisqa mazmuni"
+                            :label="$t('Summary')"
                             class="nf-bor-radius per-input-element mt-1">
 
                     </v-text-field>
@@ -75,7 +75,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Ariza beruvchi"
+                        :label="$t('Applicant')"
                 ></v-autocomplete>
             </v-col>
             <v-col xl="4" class="pa-1">
@@ -84,7 +84,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Viloyatlar bo’yicha"
+                        :label="$t('Byregions')"
                 ></v-autocomplete>
             </v-col>
 
@@ -97,7 +97,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Murojat maqomi"
+                        :label="$t('Applicationstatus')"
                 ></v-autocomplete>
             </v-col>
             <v-col xl="4" class="pa-1">
@@ -106,7 +106,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Barcha muddat ichida"
+                        :label="$t('Allthetime')"
                 ></v-autocomplete>
             </v-col>
             <v-col xl="4" class="pa-1">
@@ -115,7 +115,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Sanani tanlang"
+                        :label="$t('Selectdate')"
                 ></v-autocomplete>
             </v-col>
 
