@@ -8,12 +8,14 @@ import vuetify from "./plugins/vuetify";
 import Vuelidate from "vuelidate";
 import "./assets/scss/style.scss";
 import "./assets/scss/media.scss";
+import vueCustomScrollbar from 'vue-custom-scrollbar';
 import VImageInput from "vuetify-image-input";
 
 Vue.component('VImageInput', VImageInput);
 
 Vue.use(Vuelidate)
 Vue.use(FlagIcon)
+Vue.use(vueCustomScrollbar)
 
 Vue.config.productionTip = false;
 

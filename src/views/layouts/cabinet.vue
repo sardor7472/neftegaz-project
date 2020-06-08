@@ -28,6 +28,8 @@
           v-model="$i18n.locale"
         >
         </v-select>
+
+
         <v-select :items="years" label="2020" single-line>
           <!--                   <template v-slot:append>-->
           <!--                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"-->
@@ -171,17 +173,23 @@ export default {
   }),
   methods: {
     setLocale(locale) {
-      this.$i18n.locale = locale;
+      localStorage.setItem('lang', locale)
+        console.log(locale)
     }
   },
   computed: {
     selectedLanguage() {
       return this.langs.find(lang => lang.value === this.$i18n.locale);
-    }
+    },
   },
   components: {
     LeftSidebar
-  }
+  },
+  watch: {
+      '$i18n.locale' (val) {
+          this.setLocale(val)
+      }
+  },
 };
 </script>
 

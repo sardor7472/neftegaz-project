@@ -44,17 +44,17 @@
             </v-col>
             <v-col xl="6" lg="6" md="6">
                 <ul class="nf-resolution-center-list nf-bottom-line pb-4">
-                    <router-link to="/uzbekneftegaz-resolution">
-                        <li class="active"> Резолюция</li>
+                    <router-link tag="li" exact active-class="active" to="/uzbekneftegaz-resolution">
+                        Резолюция
                     </router-link>
-                    <router-link to="/uzbekneftegaz-resolution-document">
-                        <li>Hujjat</li>
+                    <router-link tag="li" active-class="active" to="/uzbekneftegaz-resolution-document">
+                        Hujjat
                     </router-link>
-                    <router-link to="/uzbekneftegaz-resolution-history">
-                        <li>Topshiriqlar tarixi</li>
+                    <router-link tag="li" active-class="active" to="/uzbekneftegaz-resolution-history">
+                        Topshiriqlar tarixi
                     </router-link>
-                    <router-link to="/uzbekneftegaz-resolution-execution">
-                        <li>Ijro qadamlari</li>
+                    <router-link tag="li" active-class="active" to="/uzbekneftegaz-resolution-execution">
+                        Ijro qadamlari
                     </router-link>
                 </ul>
                 <template>

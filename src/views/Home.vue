@@ -244,6 +244,7 @@
                 import(`../langs/${locale}.json`).then((msgs) => {
                     this.$i18n.setLocaleMessage(locale,msgs)
                     this.$i18n.locale = locale
+                    console.log(this.$i18n.locale)
                 })
                 // this.$i18n.locale = locale
             },

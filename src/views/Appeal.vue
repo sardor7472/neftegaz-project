@@ -177,6 +177,11 @@
         }),
         components: {
             searchClose: Search
+        },
+        computed:{
+            // lang() {
+            //     return this.$store.state.currentLang
+            // },
         }
     };
 </script>
