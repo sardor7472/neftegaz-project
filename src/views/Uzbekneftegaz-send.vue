@@ -46,7 +46,6 @@
                 <v-autocomplete
                         outlined
                         class="nf-bor-radius mt-1"
-                        v-model="value"
                         :items="items"
                         dense
                         label="Kirish raqami"
@@ -54,7 +53,6 @@
             </v-col>
             <v-col xl="4">
                 <v-menu
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -93,7 +91,6 @@
         <v-row>
             <v-col xl="4">
                 <v-menu
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -153,7 +150,6 @@
             </v-col>
             <v-col cols="12" sm="6" md="4">
                 <v-menu
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -195,12 +191,9 @@
                 </v-menu>
             </v-col>
         </v-row>
-
         <v-row>
             <v-col lg="2" xl="2">
                 <v-menu
-
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -236,8 +229,6 @@
             </v-col>
             <v-col lg="2" xl="2">
                 <v-menu
-
-                        v-model="menu2"
                         :close-on-content-click="false"
                         :nudge-right="40"
                         transition="scale-transition"
@@ -277,7 +268,6 @@
                 </v-btn>
             </v-col>
         </v-row>
-
         <template>
             <v-data-table
                     outline
@@ -285,9 +275,21 @@
                     :items="desserts"
                     :items-per-page="5"
                     class="elevation-1 nf-calendar-table"
-            ></v-data-table>
+            >
+                <template v-slot:item="{ item }">
+                    <tr
+                            :key="item.id"
+                            @click="$router.push({name: 'chancellery-jurnal', params: {cardId: item.id}})"
+                            class="tr-class">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>
+                            {{ item.calories }}
+                        </td>
+                    </tr>
+                </template>
+            </v-data-table>
         </template>
-
     </v-container>
 </template>
 <script>
@@ -307,36 +309,19 @@
                     value: 'name',
                 },
                 {text: 'temp', value: 'calories'},
-                {text: 'Fat (g)', value: 'fat'},
-                {text: 'Carbs (g)', value: 'carbs'},
-                {text: 'Protein (g)', value: 'protein'},
-                {text: 'Iron (%)', value: 'iron'},
-                {text: 'Iron (%)', value: 'iron'},
             ],
             desserts: [
                 {
                     id: '1',
                     name: 'Frozen Yogurt',
                     calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
-
                 },
                 {
                     id: '2',
                     name: 'Frozen Yogurt',
                     calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
                 },
-
-
             ],
-
         }),
     };
 </script>

@@ -3,12 +3,12 @@
     <v-container class="pl-9 pr-9 pl-lg-4 pr-lg-4">
         <div class="chancellery-send-list-wrap pt-2 pb-2">
             <p class="chancellery-jurnal-link">
-                <router-link to="/chancellery-registration-document" class="nf-active pa-1">
+                <router-link exact active-class="active" to="/chancellery-registration-document" class="pa-1">
                     Qabul qilingan yozishmalar
                 </router-link>
             </p>
             <p class="chancellery-jurnal-link">
-                <router-link to="/chancellery-inbox">
+                <router-link active-class="active" to="/chancellery-inbox">
                         <span>
                         <svg height="12px" width="12px" xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
@@ -19,23 +19,28 @@
                 </router-link>
             </p>
             <p class="chancellery-jurnal-link">
-                <router-link to="/chancellery-send" class="active"><span>
-                    <svg height="12px" width="12px" xmlns="http://www.w3.org/2000/svg"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
-                         viewBox="0 0 800 800" enable-background="new 0 0 800 800" xml:space="preserve"
-                         class="left-bar-icon"><path data-v-47182f1e="" fill="#fff" d="M740.3,527.3c-32.6,0-59.1,26.2-59.1,58.5V677h-563v-91.2c0-32.3-26.4-58.5-59-58.5    c-32.6,0-59.1,26.2-59.1,58.5v149.7c0,32.3,26.4,58.5,59.1,58.5h681.1c32.6,0,59-26.2,59-58.5V585.8    C799.4,553.5,772.9,527.3,740.3,527.3z M189.9,251.9h97.2v290.3c0,24.8,20.6,44.9,46.1,44.9h133.2c25.5,0,46.1-20.1,46.1-44.9    V251.9h97.2c8.5,0,16.2-5,19.5-12.7c3.3-7.7,1.5-16.5-4.6-22.4l-207-201.5c-9.8-9.6-25.8-9.6-35.6,0L175,216.9    c-6,5.9-7.8,14.7-4.5,22.4C173.7,246.9,181.4,251.9,189.9,251.9z"></path></svg>
-                </span>
-                    Chiquvchi hujjatlar</router-link>
+                <router-link active-class="active" to="/chancellery-send">
+                        <span>
+                        <svg height="12px" width="12px" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
+                             viewBox="0 0 800 800" enable-background="new 0 0 800 800" xml:space="preserve"
+                             class="left-bar-icon"><path data-v-47182f1e="" fill="#fff" d="M740.3,527.3c-32.6,0-59.1,26.2-59.1,58.5V677h-563v-91.2c0-32.3-26.4-58.5-59-58.5    c-32.6,0-59.1,26.2-59.1,58.5v149.7c0,32.3,26.4,58.5,59.1,58.5h681.1c32.6,0,59-26.2,59-58.5V585.8    C799.4,553.5,772.9,527.3,740.3,527.3z M189.9,251.9h97.2v290.3c0,24.8,20.6,44.9,46.1,44.9h133.2c25.5,0,46.1-20.1,46.1-44.9    V251.9h97.2c8.5,0,16.2-5,19.5-12.7c3.3-7.7,1.5-16.5-4.6-22.4l-207-201.5c-9.8-9.6-25.8-9.6-35.6,0L175,216.9    c-6,5.9-7.8,14.7-4.5,22.4C173.7,246.9,181.4,251.9,189.9,251.9z"></path></svg>
+                        </span>
+                    Chiquvchi hujjatlar
+                </router-link>
             </p>
             <p class="chancellery-jurnal-link">
-                <router-link to="/chancellery-jurnal" class="active">
+                <router-link active-class="active" to="/chancellery-jurnal">
                         <span>
-                            <svg height="12" width="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 800 741.9" enable-background="new 0 0 800 741.9" xml:space="preserve">
+                            <svg height="12" width="12" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
+                                 viewBox="0 0 800 741.9" enable-background="new 0 0 800 741.9" xml:space="preserve">
 		                <path fill="#0092C8"
                               d="M286.4,741.9h228.8V0H286.4V741.9z M337.5,68.2H464v331.3H337.5V68.2z M337.1,452.2h127.3v57.1H337.1    V452.2z M337.1,562.1h127.3v57.1H337.1V562.1z M571.2,0v741.9H800V0H571.2z M622.3,68.2h126.5v331.3H622.3V68.2z M749.2,619.1    H621.9v-57.1h127.3V619.1z M749.2,509.3H621.9v-57.1h127.3V509.3z M1,741.9h228.8V0H1V741.9z M52.2,68.2h126.5v331.3H52.2V68.2z     M51.8,452.2h127.3v57.1H51.8V452.2z M51.8,562.1h127.3v57.1H51.8V562.1z"/>
                         </svg>
                           </span>
-                    Jurnallar</router-link>
+                    Jurnallar
+                </router-link>
             </p>
         </div>
     </v-container>
@@ -174,6 +179,7 @@
                     :items-per-page="5"
                     class="elevation-1 nf-calendar-table"
             >
+
                 <template v-slot:item.file="{item}">
                     <a :href="item.file">Download book</a>
                 </template>

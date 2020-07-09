@@ -2,7 +2,7 @@
     <v-container class="pl-9 pr-9 pl-lg-4 pr-lg-4">
         <v-row>
             <v-col lg="3" xl="3">
-                <p>Hujjatlar ro'yxati</p>
+                <p>{{$t('Listofdocuments')}}</p>
                 <v-text-field
                         outlined
                         dense
@@ -19,7 +19,7 @@
 
                 </v-text-field>
                 <ul class="nf-resolution-list">
-                    <li>Mahalliy</li>
+                    <li>{{$t('Local')}}</li>
                     <li>Yuqoridan</li>
                 </ul>
                 <div class="pa-2 nf-resolution-document">
@@ -45,10 +45,10 @@
 
             <v-col class="nf-vertical-left-line" lg="6" xl="6">
                 <ul class="nf-resolution-center-list mb-2">
-                    <li> Резолюция</li>
-                    <li>Hujjat</li>
-                    <li>Topshiriqlar tarixi</li>
-                    <li>Ijro qadamlari</li>
+                    <li> {{$t('Resolution')}}</li>
+                    <li>{{$t('document')}}</li>
+                    <li>{{$t('Historyassignments')}}</li>
+                    <li>{{$t('Executionsteps')}}</li>
                 </ul>
                 <v-divider></v-divider>
 
@@ -178,7 +178,6 @@
                         <v-autocomplete
                                 outlined
                                 class="nf-bor-radius mt-4"
-                                v-model="value"
                                 :items="items"
                                 dense
                                 label="Qabul qiluvchini tanlang"
@@ -189,7 +188,6 @@
 
         </v-row>
         <v-dialog
-                v-model="dialog"
                 width="700"
         >
             <template v-slot:activator="{ on }">
@@ -217,7 +215,6 @@
                             <v-autocomplete
                                     outlined
                                     class="nf-bor-radius "
-                                    v-model="value"
                                     :items="items"
                                     dense
                                     label="Filled"

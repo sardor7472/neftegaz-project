@@ -28,20 +28,20 @@
                     </span>
                     </li>
                 </ul>
-                <ul class="nf-document-dep-center-list nf-bottom-line pb-4 pt-4">
-                    <router-link to="/document-dep-document">
-                        <li class="active">Hujjat</li>
+                <ul class="nf-document-dep-center-list pb-4 pt-4">
+                    <router-link tag="li" exact active-class="active" to="/document-dep-document">
+                        Hujjat
                     </router-link>
-                    <li>Yuborish</li>
-                    <router-link to="/document-dep-history">
-                        <li>Topshiriqlar tarixi</li>
+                    <router-link tag="li" active-class="active" to="/">Yuborish</router-link>
+                    <router-link tag="li" active-class="active" to="/document-dep-history">
+                        Topshiriqlar tarixi
                     </router-link>
-                    <router-link to="/document-dep-execution">
-                        <li>Ijro qadamlari</li>
+                    <router-link tag="li" active-class="active" to="/document-dep-execution">
+                        Ijro qadamlari
                     </router-link>
-                    <li> Nazorat punktlari</li>
-                    <router-link to="/document-dep-related">
-                        <li>Bog‘liq hujjatlar</li>
+                    <router-link tag="li" active-class="active" to="/">Nazorat punktlari</router-link>
+                    <router-link tag="li" active-class="active" to="/document-dep-related">
+                        Bog‘liq hujjatlar
                     </router-link>
                 </ul>
                 <div class="mt-12   ">

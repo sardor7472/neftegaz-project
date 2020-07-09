@@ -5,7 +5,7 @@
                 <div class="appeal-blog">
                     <p class="appeal-title">Murojaat</p>
                     <v-btn class="nf-bor-radius white--text" color="#00a5e2" large>
-                        Eksport
+                        {{$t('Eksport')}}
                         <span class="ml-2">
                              <svg data-v-47182f1e="" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg"
                                   xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
@@ -15,14 +15,14 @@
                     </v-btn>
                 </div>
                 <ul class="appeal-list mt-5">
-                    <li><a href="">Barcha</a><span class="appeal-blog-span">2</span></li>
-                    <li class="active"><a href="">Ish jarayonida</a> <span class="appeal-blog-span">2</span></li>
-                    <li><a href="">Muddati o‘tgan</a></li>
-                    <li><a href="">Bajarildi</a> <span class="appeal-blog-span">2</span></li>
-                    <li><a href="">Muddati o‘tib ijro qilingan</a></li>
-                    <li><a href="">Qayta boshlangan</a></li>
-                    <li><a href="">Tasdiqlashda</a></li>
-                    <li><a href="">Rad etilgan</a></li>
+                    <li><a href="">{{$t('all')}}</a><span class="appeal-blog-span">2</span></li>
+                    <li class="active"><a href="">{{$t('Intheprocessofwork')}}</a> <span class="appeal-blog-span">2</span></li>
+                    <li><a href="">{{$t('Expired')}}</a></li>
+                    <li><a href="">{{$t('Done')}}</a> <span class="appeal-blog-span">2</span></li>
+                    <li><a href="">{{$t('Executedlate')}}</a></li>
+                    <li><a href="">{{$t('Restarted')}}</a></li>
+                    <li><a href="">{{$t('In approval')}}</a></li>
+                    <li><a href="">{{$t('Rejected')}}</a></li>
                 </ul>
             </v-col>
         </v-row>
@@ -34,7 +34,7 @@
                     <v-text-field
                             outlined
                             dense
-                            label="Kirish raqami"
+                            :label="$t('Accessnumber')"
                             class="nf-bor-radius per-input-element mt-1">
 
                     </v-text-field>
@@ -44,15 +44,15 @@
                 <v-text-field
                         outlined
                         dense
-                        label="Chiqish raqami"
+                        :label="$t('Outputnumber')"
                         class="nf-bor-radius per-input-element mt-1">
 
                 </v-text-field>
             </v-col>
             <v-col xl="4" class="pa-1">
                 <v-radio-group class="appeal-radio" row v-model="radios">
-                    <v-radio label="Aniq qidiruv" value="radio-1"></v-radio>
-                    <v-radio label="Я в своде" value="radio-2"></v-radio>
+                    <v-radio :label="$t('Theexactsearch')" value="radio-1"></v-radio>
+                    <v-radio :label="$t('thevault')" value="radio-2"></v-radio>
                 </v-radio-group>
             </v-col>
 
@@ -63,7 +63,7 @@
                     <v-text-field
                             outlined
                             dense
-                            label="Qisqa mazmuni"
+                            :label="$t('Summary')"
                             class="nf-bor-radius per-input-element mt-1">
 
                     </v-text-field>
@@ -75,7 +75,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Ariza beruvchi"
+                        :label="$t('Applicant')"
                 ></v-autocomplete>
             </v-col>
             <v-col xl="4" class="pa-1">
@@ -84,7 +84,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Viloyatlar bo’yicha"
+                        :label="$t('Byregions')"
                 ></v-autocomplete>
             </v-col>
 
@@ -97,7 +97,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Murojat maqomi"
+                        :label="$t('Applicationstatus')"
                 ></v-autocomplete>
             </v-col>
             <v-col xl="4" class="pa-1">
@@ -106,7 +106,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Barcha muddat ichida"
+                        :label="$t('Allthetime')"
                 ></v-autocomplete>
             </v-col>
             <v-col xl="4" class="pa-1">
@@ -115,7 +115,7 @@
                         class="nf-bor-radius mt-1"
                         :items="items"
                         dense
-                        label="Sanani tanlang"
+                        :label="$t('Selectdate')"
                 ></v-autocomplete>
             </v-col>
 
@@ -126,15 +126,27 @@
                     :headers="headers"
                     :items="desserts"
                     :items-per-page="5"
-                    class="elevation-1 nf-calendar-table mt-4"
-            ></v-data-table>
+                    class="elevation-1 nf-calendar-table"
+            >
+                <template v-slot:item="{ item }">
+                    <tr
+                            :key="item.id"
+                            @click="$router.push({name: 'chancellery-jurnal', params: {cardId: item.id}})"
+                            class="tr-class">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>
+                            {{ item.calories }}
+                        </td>
+                    </tr>
+                </template>
+            </v-data-table>
         </template>
     </v-container>
 </template>
 <script>
     import Search from '../components/search'
     export default {
-
         data: () => ({
             items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
             radios: 'radio-1',
@@ -148,40 +160,28 @@
                     sortable: false,
                     value: 'name',
                 },
-                { text: 'temp', value: 'calories' },
-                { text: 'Fat (g)', value: 'fat' },
-                { text: 'Carbs (g)', value: 'carbs' },
-                { text: 'Protein (g)', value: 'protein' },
-                { text: 'Iron (%)', value: 'iron' },
-                { text: 'Iron (%)', value: 'iron' },
+                {text: 'temp', value: 'calories'},
             ],
             desserts: [
                 {
                     id: '1',
                     name: 'Frozen Yogurt',
                     calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
-
                 },
                 {
                     id: '2',
                     name: 'Frozen Yogurt',
                     calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
                 },
-
-
             ],
         }),
         components: {
             searchClose: Search
+        },
+        computed:{
+            // lang() {
+            //     return this.$store.state.currentLang
+            // },
         }
-
     };
 </script>

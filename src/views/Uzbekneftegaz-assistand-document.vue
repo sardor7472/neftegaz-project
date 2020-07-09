@@ -3,8 +3,7 @@
         <v-row>
             <v-col class="">
                 <div class="">
-                    <p class="appeal-title">
-                        Ruxsat bo'yicha</p>
+                    <p class="appeal-title">{{$t('Bypermission')}}</p>
                 </div>
             </v-col>
         </v-row>
@@ -19,12 +18,11 @@
                 >
                     <template v-slot:item.file="{item}">
                         <v-btn class="nf-bor-radius white--text mt-3" color="#00a5e2" large>
-                            Hujjatni qayta yo'naltirish
+                            {{$t('Redirectthedocument')}}
                         </v-btn>
                         <v-autocomplete
                                 outlined
                                 class="nf-bor-radius mt-3"
-                                v-model="value"
                                 :items="items"
                                 dense
                                 label="Qabul qiluvchini tanlang"

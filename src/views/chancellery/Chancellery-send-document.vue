@@ -4,10 +4,10 @@
             <div class="ml-3">
                 <v-row>
                     <ul class="nf-resolution-center-list pt-2 pb-2">
-                        <li class="active">Hujjat</li>
-                        <li>Topshiriqlar tarixi</li>
-                        <li>Ijro qadamlari</li>
-                        <li> Tahrirlash</li>
+                        <router-link to="/" tag="li" exact active-class="active">Hujjat</router-link>
+                        <router-link to="/" tag="li" active-class="active">Topshiriqlar tarixi</router-link>
+                        <router-link to="/" tag="li" active-class="active">Ijro qadamlari</router-link>
+                        <router-link to="/" tag="li" active-class="active"> Tahrirlash</router-link>
                     </ul>
                 </v-row>
             </div>

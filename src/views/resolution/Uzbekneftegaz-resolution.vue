@@ -44,17 +44,17 @@
             </v-col>
             <v-col xl="6" lg="6">
                 <ul class="nf-resolution-center-list nf-bottom-line pb-4">
-                    <router-link to="/uzbekneftegaz-resolution">
-                        <li class="active"> Резолюция</li>
+                    <router-link tag="li" to="/uzbekneftegaz-resolution" exact active-class="active">
+                        Резолюция
                     </router-link>
-                    <router-link to="/uzbekneftegaz-resolution-document">
-                        <li>Hujjat</li>
+                    <router-link tag="li" to="/uzbekneftegaz-resolution-document" active-class="active">
+                        Hujjat
                     </router-link>
-                    <router-link to="/uzbekneftegaz-resolution-history">
-                        <li>Topshiriqlar tarixi</li>
+                    <router-link tag="li" to="/uzbekneftegaz-resolution-history" active-class="active">
+                        Topshiriqlar tarixi
                     </router-link>
-                    <router-link to="/uzbekneftegaz-resolution-execution">
-                        <li>Ijro qadamlari</li>
+                    <router-link tag="li" to="/uzbekneftegaz-resolution-execution" active-class="active">
+                        Ijro qadamlari
                     </router-link>
                 </ul>
                 <div class="pt-5">
@@ -123,9 +123,9 @@
                         </vue-custom-scrollbar>
                     </div>
                     <div class="mt-5">
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
-                            <v-radio label="Ўзбекча" value="radio-1"></v-radio>
-                            <v-radio label="Русский" value="radio-2"></v-radio>
+                        <v-radio-group class="chancellery-jurnal-radio" row >
+                            <v-radio label="Ўзбекча" ></v-radio>
+                            <v-radio label="Русский" ></v-radio>
                         </v-radio-group>
                     </div>
                     <div class="">
@@ -161,9 +161,9 @@
                     </div>
                     <div class="assistend-otpravet-center-radio-element">
                         <p>("Ўзбекнефтгаз" АЖ) Mas’ul ijrochi:</p>
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
-                            <v-radio label="ha" value="radio-1"></v-radio>
-                            <v-radio label="yo'q" value="radio-2"></v-radio>
+                        <v-radio-group class="chancellery-jurnal-radio" row>
+                            <v-radio label="ha"></v-radio>
+                            <v-radio label="yo'q"></v-radio>
                         </v-radio-group>
                     </div>
                     <div class="assistend-otpravet-center-btn">

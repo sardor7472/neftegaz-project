@@ -3,10 +3,10 @@
         <v-row>
             <v-col lg="8" xl="8">
                 <ul class="nf-resolution-center-list pb-4">
-                    <li class="active"> Hujjatni ro'yxatdan o'tkazish</li>
-                    <li>Hujjat</li>
-                    <li>Topshiriqlar tarixi</li>
-                    <li>Ijro qadamlari</li>
+                    <router-link tag="li" to="/" exact active-class="active"> Hujjatni ro'yxatdan o'tkazish</router-link>
+                    <router-link tag="li" to="/" active-class="active">Hujjat</router-link>
+                    <router-link tag="li" to="/" active-class="active">Topshiriqlar tarixi</router-link>
+                    <router-link tag="li" to="/" active-class="active">Ijro qadamlari</router-link>
                 </ul>
                 <v-divider></v-divider>
                 <div class="nf-chancellery-registration">
@@ -34,7 +34,6 @@
                         <v-col lg="6" xl="6">
                             <p class="chancellery-send-doc-paragraph">Kiruvchi hujjat raqami</p>
                             <v-menu
-                                    v-model="menu2"
                                     :close-on-content-click="false"
                                     :nudge-right="40"
                                     transition="scale-transition"
@@ -45,7 +44,6 @@
                                     <v-text-field
                                             outlined
                                             dense
-                                            v-model="date"
                                             readonly
                                             v-on="on"
                                             class="nf-bor-radius per-input-element mt-2">
@@ -65,7 +63,7 @@
 
                                     </v-text-field>
                                 </template>
-                                <v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
+                                <v-date-picker @input="menu2 = false"></v-date-picker>
                             </v-menu>
                         </v-col>
                         <v-col lg="6" xl="6">

@@ -30,24 +30,12 @@
                     </li>
                 </ul>
                 <ul class="nf-document-dep-center-list nf-bottom-line pb-4 pt-4">
-                    <router-link to="/document-document">
-                        <li class="active">Hujjat</li>
-                    </router-link>
-                    <router-link to="/document-send">
-                        <li>Yuborish</li>
-                    </router-link>
-                    <router-link to="/document-history">
-                        <li>Topshiriqlar tarixi</li>
-                    </router-link>
-                    <router-link to="/document-execution">
-                        <li>Ijro qadamlari</li>
-                    </router-link>
-                    <router-link to="/document-control">
-                        <li> Nazorat punktlari</li>
-                    </router-link>
-                    <router-link to="/document-related">
-                        <li>Bog‘liq hujjatlar</li>
-                    </router-link>
+                    <router-link tag="li" exact active-class="active" to="/document-document">Hujjat</router-link>
+                    <router-link tag="li" active-class="active" to="/document-send">Yuborish</router-link>
+                    <router-link tag="li" active-class="active" to="/document-history">Topshiriqlar tarixi</router-link>
+                    <router-link tag="li" active-class="active" to="/document-execution">Ijro qadamlari</router-link>
+                    <router-link tag="li" active-class="active" to="/document-control"> Nazorat punktlari</router-link>
+                    <router-link tag="li" active-class="active" to="/document-related">Bog‘liq hujjatlar</router-link>
                 </ul>
                 <div class="mt-12   ">
                     <div>
@@ -155,7 +143,6 @@
                     <v-divider></v-divider>
                     <div class="mt-3 mb-5">
                         <v-dialog
-                                v-model="dialog"
                                 width="600"
 
                         >
@@ -276,21 +263,12 @@
     </v-container>
 </template>
 <script>
-    import vueCustomScrollbar from 'vue-custom-scrollbar'
     export default {
-        components: {
-            vueCustomScrollbar
-        },
         data: () => ({
             items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
-            settings: {
-                suppressScrollX: true,
-            },
         }),
         methods: {
-            scrollHanle(evt) {
-                console.log(evt)
-            }
+
         }
     };
 </script>

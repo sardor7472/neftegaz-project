@@ -2,7 +2,7 @@
     <v-container class="pl-9 pr-9 pl-lg-4 pr-lg-4">
         <v-row>
             <v-col lg="3" xl="3">
-                <p>Hujjatlar ro'yxati</p>
+                <p>{{$t('Listofdocuments')}}</p>
                 <v-text-field
                         outlined
                         dense
@@ -19,8 +19,8 @@
 
                 </v-text-field>
                 <ul class="nf-resolution-list">
-                    <li>Mahalliy</li>
-                    <li>Yuqoridan</li>
+                    <li>{{$t('Local')}}</li>
+                    <li>{{$t('From above')}}</li>
                 </ul>
                 <div class="pa-2 nf-resolution-document">
                     <p class="nf-resolution-document-number "><span class="nf-sime">3/5-346</span><span>Кеча соат 17:00 да</span></p>
@@ -41,7 +41,6 @@
                         <span class="nf-sime">Приказ № 13 от 13.01.2020г</span><span>Bildirgi</span></p>
                 </div>
                 <v-dialog
-                        v-model="dialog"
                         width="300"
                 >
                     <template v-slot:activator="{ on }">
@@ -79,34 +78,33 @@
             </v-col>
             <v-col class="nf-vertical-left-line" lg="6" xl="6">
                 <ul class="nf-resolution-center-list mb-2">
-                    <li> Резолюция</li>
-                    <li>Hujjat</li>
-                    <li>Topshiriqlar tarixi</li>
-                    <li>Ijro qadamlari</li>
+                    <li> {{$t('Resolution')}}</li>
+                    <li>{{$t('document')}}</li>
+                    <li>{{$t('Historyassignments')}}</li>
+                    <li>{{$t('Executionsteps')}}</li>
                 </ul>
                 <v-divider></v-divider>
 
                 <div class="pt-5">
-                    <p class="mt-5 ">Ro’yhatga olish jurnali</p>
+                    <p class="mt-5 ">{{$t('Registrationlog')}}</p>
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-2"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Ijro uchun"
                     ></v-autocomplete>
-                    <p class="chancellery-send-doc-paragraph">Ijro muddati</p>
+                    <p class="chancellery-send-doc-paragraph">{{$t('Executiontime')}}</p>
                     <v-text-field
                             dense
                             outlined
                             label="22.01.2020"
                             class="nf-bor-radius mt-2">
                     </v-text-field>
-                    <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
-                        <v-radio label="Xodimlar" value="radio-1"></v-radio>
-                        <v-radio label="Tegishli tashkilotlar" value="radio-2"></v-radio>
-                        <v-radio label="Mintaqaviy bo'linmalar" value="radio-3"></v-radio>
+                    <v-radio-group class="chancellery-jurnal-radio" row>
+                        <v-radio :label="$t('Staff')" value="radio-1"></v-radio>
+                        <v-radio :label="$t('Relevantorganizations')" value="radio-2"></v-radio>
+                        <v-radio :label="$t('Regionaldivisions')" value="radio-3"></v-radio>
                     </v-radio-group>
                     <p class="nf-sime">
                         Д.Руслан <span class="ml-5">
@@ -131,8 +129,8 @@
                         </span>
                     </p>
                     <ul class="assistend-otpravet-center-menu mt-5">
-                        <li>Barchasi</li>
-                        <li>Hozirga/Quyi bo’limlar</li>
+                        <li>{{$t('Thatall')}}</li>
+                        <li>{{$t('Fornow')}}/{{$t('Subsections')}}</li>
                     </ul>
                     <v-text-field
                             outlined
@@ -147,7 +145,6 @@
                                       d="m378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333 0-115.484-93.961-209.445-209.445-209.445s-209.444 93.961-209.444 209.445 93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564c0-.001-137.214-137.213-137.214-137.213zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z"/>
                             </svg>
                         </template>
-
                     </v-text-field>
                     <div class="">
                         <vue-custom-scrollbar class="scroll-area pr-4" :settings="settings" @ps-scroll-y="scrollHanle">
@@ -175,7 +172,7 @@
                         </vue-custom-scrollbar>
                     </div>
                     <div class="mt-5">
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                        <v-radio-group class="chancellery-jurnal-radio" row>
                             <v-radio label="Ўзбекча" value="radio-1"></v-radio>
                             <v-radio label="Русский" value="radio-2"></v-radio>
                         </v-radio-group>
@@ -203,7 +200,7 @@
                         </vue-custom-scrollbar>
                     </div>
                     <div class="mt-5">
-                        <p class="chancellery-send-doc-paragraph">Tavsif <span>*</span></p>
+                        <p class="chancellery-send-doc-paragraph">{{$t('Description')}} <span>*</span></p>
                         <v-textarea
                                 outlined
                                 name="input-7-4"
@@ -213,28 +210,26 @@
                     </div>
                     <div class="assistend-otpravet-center-radio-element">
                         <p>("Ўзбекнефтгаз" АЖ) Mas’ul ijrochi:</p>
-                        <v-radio-group class="chancellery-jurnal-radio ml-8" row v-model="radios">
+                        <v-radio-group class="chancellery-jurnal-radio ml-8" row>
                             <v-radio label="ha" value="radio-1"></v-radio>
                             <v-radio label="yo'q" value="radio-2"></v-radio>
                         </v-radio-group>
                     </div>
-                    <p class="">Ijrochi</p>
+                    <p class="">{{$t('Executor')}}</p>
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-2"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Ko‘rsatilmagan"
                     ></v-autocomplete>
 
-                    <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                    <v-radio-group class="chancellery-jurnal-radio" row>
                         <v-radio label="Dublikat" value="radio-1"></v-radio>
                     </v-radio-group>
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Har chorakda"
@@ -310,7 +305,6 @@
                         <v-autocomplete
                                 outlined
                                 class="nf-bor-radius mt-4"
-                                v-model="value"
                                 :items="items"
                                 dense
                                 label="Qabul qiluvchini tanlang"

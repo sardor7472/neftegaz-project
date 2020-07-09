@@ -53,7 +53,7 @@
                         <v-list-item-title>Hujjat yaratmoq</v-list-item-title>
                     </v-list-item>
                 </router-link>
-                <router-link to="/">
+                <router-link to="/uzbekneftegaz-received">
                     <v-list-item>
                         <v-list-item-icon>
                         <span>
@@ -98,7 +98,7 @@
                     <v-list-item-title>Mening hujjatlarim</v-list-item-title>
                 </v-list-item>
                 </router-link>
-                <router-link to="/">
+                <router-link to="/uzbekneftegaz-dep">
                 <v-list-item>
                     <v-list-item-icon>
                         <span>
@@ -115,7 +115,7 @@
                     <v-list-item-title>Mening bo’limim hujjatlari</v-list-item-title>
                 </v-list-item>
                 </router-link>
-                <router-link to="/">
+                <router-link to="/uzbekneftegaz-send">
                 <v-list-item>
                     <v-list-item-icon>
                         <span>

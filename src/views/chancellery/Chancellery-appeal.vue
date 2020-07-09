@@ -10,7 +10,6 @@
                         dense
                         label="Fuqarolarning murojaatlari"
                 ></v-autocomplete>
-
                 <p class="chancellery-send-doc-lable">Murojaat turi </p>
                 <v-autocomplete
                         outlined
@@ -19,7 +18,6 @@
                         dense
                         label="Ариза"
                 ></v-autocomplete>
-
                 <p>Mintaqani tanlang</p>
                 <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
                     <v-radio label="Uzbekistan" value="radio-1"></v-radio>

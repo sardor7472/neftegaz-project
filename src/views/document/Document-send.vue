@@ -30,24 +30,12 @@
                     </li>
                 </ul>
                 <ul class="nf-document-dep-center-list nf-bottom-line pb-4 pt-4">
-                    <router-link to="/document-document">
-                        <li class="active">Hujjat</li>
-                    </router-link>
-                    <router-link to="/document-send">
-                        <li>Yuborish</li>
-                    </router-link>
-                    <router-link to="/document-history">
-                        <li>Topshiriqlar tarixi</li>
-                    </router-link>
-                    <router-link to="/document-execution">
-                        <li>Ijro qadamlari</li>
-                    </router-link>
-                    <router-link to="/document-control">
-                        <li> Nazorat punktlari</li>
-                    </router-link>
-                    <router-link to="/document-related">
-                        <li>Bog‘liq hujjatlar</li>
-                    </router-link>
+                    <router-link tag="li" exact active-class="active" to="/document-document">Hujjat</router-link>
+                    <router-link tag="li" active-class="active" to="/document-send">Yuborish</router-link>
+                    <router-link tag="li" active-class="active" to="/document-history">Topshiriqlar tarixi</router-link>
+                    <router-link tag="li" active-class="active" to="/document-execution">Ijro qadamlari</router-link>
+                    <router-link tag="li" active-class="active" to="/document-control"> Nazorat punktlari</router-link>
+                    <router-link tag="li" active-class="active" to="/document-related">Bog‘liq hujjatlar</router-link>
                 </ul>
                 <div class="pt-5">
                     <v-row>
@@ -56,7 +44,6 @@
                             <v-autocomplete
                                     outlined
                                     class="nf-bor-radius mt-4"
-                                    v-model="value"
                                     :items="items"
                                     dense
                                     label="Bajarishga"
@@ -140,7 +127,7 @@
                         </vue-custom-scrollbar>
                     </div>
                     <div class="mt-5">
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                        <v-radio-group class="chancellery-jurnal-radio" row>
                             <v-radio label="Chiquvchi" value="radio-1"></v-radio>
                             <v-radio label="Kiruvchi" value="radio-2"></v-radio>
                         </v-radio-group>
@@ -178,7 +165,7 @@
                     </div>
                     <div class="assistend-otpravet-center-radio-element">
                         <p>("Ўзбекнефтгаз" АЖ) Mas’ul ijrochi:</p>
-                        <v-radio-group class="chancellery-jurnal-radio" row v-model="radios">
+                        <v-radio-group class="chancellery-jurnal-radio" row>
                             <v-radio label="Chiquvchi" value="radio-1"></v-radio>
                             <v-radio label="Kiruvchi" value="radio-2"></v-radio>
                         </v-radio-group>
@@ -187,7 +174,6 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-4"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Bajarishga"
@@ -196,7 +182,6 @@
                     <v-autocomplete
                             outlined
                             class="nf-bor-radius mt-4"
-                            v-model="value"
                             :items="items"
                             dense
                             label="Bajarishga"
@@ -340,7 +325,6 @@
                         </div>
                     </div>
                     <v-divider></v-divider>
-
                 </div>
             </v-col>
         </v-row>

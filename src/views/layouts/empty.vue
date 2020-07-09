@@ -40,8 +40,6 @@
 </script>
 
 <style scoped lang="scss">
-
-
   .nf-header-select{
     display: flex;
     align-items: center;
