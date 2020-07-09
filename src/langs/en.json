@@ -49,5 +49,7 @@
   "Executor": "Executor",
   "Bypermission": "By permission",
   "Redirectthedocument": "Redirect the document",
+  "title": "Title",
+  "description": "Description",
   "AssignmentsChamberAccounts": "Assignments of the Chamber of Accounts"
 }

@@ -49,5 +49,7 @@
   "Executor": "душеприказчик",
   "Bypermission": "С разрешения",
   "Redirectthedocument": "Перенаправить документ",
-  "AssignmentsChamberAccounts": "Назначения Счетной палаты"
+  "AssignmentsChamberAccounts": "Назначения Счетной палаты",
+  "title": "Загаловка",
+  "description": "Описание"
 }

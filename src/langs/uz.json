@@ -49,5 +49,7 @@
   "Executor": "Ijrochi",
   "Bypermission": "Ruxsat bo'yicha",
   "Redirectthedocument": "Hujjatni qayta yo'naltirish",
-  "AssignmentsChamberAccounts": "Hisob palatasi topshiriqlari"
+  "AssignmentsChamberAccounts": "Hisob palatasi topshiriqlari",
+  "title": "Sarlavha",
+  "description": "Ma'lumot"
 }
