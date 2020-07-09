@@ -113,9 +113,9 @@
                 </v-list-item-content>
             </v-list-item>
         </v-navigation-drawer>
-        <v-content>
+        <v-main>
             <router-view></router-view>
-        </v-content>
+        </v-main>
         <v-footer :inset="footer.inset" app>
             <span class="px-4">&copy; {{ new Date().getFullYear() }}</span>
         </v-footer>

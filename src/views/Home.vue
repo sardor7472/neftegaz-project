@@ -18,35 +18,29 @@
                             </v-sheet>
                             <v-sheet height="450">
                                 <v-calendar
-
+                                        :locale="$i18n.locale"
                                         ref="calendar"
-                                        v-model="focus"
                                         color="primary"
-                                        :events="events"
-                                        :event-color="getEventColor"
-                                        @click:event="showEvent"
-                                        @click:date="viewDay"
-                                        @change="updateRange"
-                                ></v-calendar>
-                                <v-menu
+                                        :events="tasks"
+                                        class="task-calendar"
+                                        @click:day="showDayEvent"
+                                >
+                                    <template #event="{event}">
+                                        {{event.taskCount}}
+                                    </template>
+
+                                </v-calendar>
+                                <v-dialog
+                                        width="800"
                                         v-model="selectedOpen"
                                         :close-on-content-click="false"
-                                        :activator="selectedElement"
-                                        offset-x
-                                >
+                                        offset-x>
                                     <v-card
                                             color="grey lighten-4"
                                             min-width="350px"
-                                            flat
-                                    >
-                                        <v-toolbar
-                                                :color="selectedEvent.color"
-                                                dark
-                                        >
-                                            <v-btn icon>
-                                                <v-icon>mdi-pencil</v-icon>
-                                            </v-btn>
-                                            <v-toolbar-title v-html="selectedEvent.name"></v-toolbar-title>
+                                            flat>
+                                        <v-toolbar dark color="primary">
+                                            <v-toolbar-title v-html="selectedEvent.day"></v-toolbar-title>
                                             <v-spacer></v-spacer>
 
                                             <v-btn icon>
@@ -55,13 +49,10 @@
                                         </v-toolbar>
                                         <v-card-text>
                                             <!--                                            <span v-html="selectedEvent.details"></span>-->
-
-
                                             <template>
                                                 <v-data-table
-
-                                                        :headers="headers"
-                                                        :items="desserts"
+                                                        :headers="tableTaskHeaders"
+                                                        :items="selectedEvent.tasks"
                                                         :items-per-page="5"
                                                         class="elevation-1 nf-calendar-table"
                                                 ></v-data-table>
@@ -73,13 +64,12 @@
                                             <v-btn
                                                     text
                                                     color="secondary"
-                                                    @click="selectedOpen = false"
-                                            >
+                                                    @click="selectedOpen = false">
                                                 Cancel
                                             </v-btn>
                                         </v-card-actions>
                                     </v-card>
-                                </v-menu>
+                                </v-dialog>
                             </v-sheet>
                             <v-toolbar flat color="white">
 
@@ -150,8 +140,7 @@
         <template>
             <v-data-table
                     outline
-                    :headers="headers"
-                    :items="desserts"
+                    :items="items"
                     :items-per-page="5"
                     class="elevation-1 nf-calendar-table"
             ></v-data-table>
@@ -160,106 +149,51 @@
 </template>
 
 <script>
+    import {tasks} from "../responseExample";
+
     export default {
-        data: () => ({
-            focus: '',
-            type: 'month',
-            start: null,
-            end: null,
-            selectedEvent: {},
-            selectedElement: null,
-            selectedOpen: false,
-            events: [],
-            colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
-            names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
-            headers: [
-                {
-                    text: '№', value: 'id'
-                },
-                {
-                    text: 'Dessert (100g serving)',
-                    align: 'start',
-                    sortable: false,
-                    value: 'name',
-                },
-                {text: 'temp', value: 'calories'},
-                {text: 'Fat (g)', value: 'fat'},
-                {text: 'Carbs (g)', value: 'carbs'},
-                {text: 'Protein (g)', value: 'protein'},
-                {text: 'Iron (%)', value: 'iron'},
-                {text: 'Iron (%)', value: 'iron'},
-            ],
-            desserts: [
-                {
-                    id: '1',
-                    name: 'Frozen Yogurt',
-                    calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
-
-                },
-                {
-                    id: '2',
-                    name: 'Frozen Yogurt',
-                    calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
-                },
-
-
-            ],
-        }),
+        data() {
+            return {
+                selectedDate: new Date(),
+                selectedEvent: {},
+                selectedOpen: false,
+                tasks: [],
+                tableTaskHeaders: [
+                    {
+                        text: this.$t('title'),
+                        value: 'title'
+                    },
+                    {
+                        text: this.$t('description'),
+                        value: 'description'
+                    }
+                ],
+                items: [],
+            }
+        },
         computed: {
             title() {
-                const {start, end} = this
-                if (!start || !end) {
+                const {start} = this
+                if (!start) {
                     return ''
                 }
                 const startMonth = this.monthFormatter(start)
-                const endMonth = this.monthFormatter(end)
-                const suffixMonth = startMonth === endMonth ? '' : endMonth
-
                 const startYear = start.year
-                const endYear = end.year
-                const suffixYear = startYear === endYear ? '' : endYear
-
-                const startDay = start.day + this.nth(start.day)
-                const endDay = end.day + this.nth(end.day)
-
-                switch (this.type) {
-                    case 'month':
-                        return `${startMonth} ${startYear}`
-                    case 'week':
-                    case '4day':
-                        return `${startMonth} ${startDay} ${startYear} - ${suffixMonth} ${endDay} ${suffixYear}`
-                    case 'day':
-                        return `${startMonth} ${startDay} ${startYear}`
-                }
-                return ''
+                return `${startMonth} ${startYear}`
             },
-            monthFormatter() {
-                return this.$refs.calendar.getFormatter({
-                    timeZone: 'UTC', month: 'long',
-                })
-            },
+            selectedYear() {
+                return this.$store.state.selectedYear
+            }
         },
-        mounted() {
-            this.$refs.calendar.checkChange()
-        },
+
         methods: {
-            viewDay({date}) {
-                this.focus = date
-                this.type = 'day'
-            },
-            getEventColor(event) {
-                return event.color
-            },
-            setToday() {
-                this.focus = this.today
+            showDayEvent({date}) {
+                const selectedDayEvent = this.tasks.find(item => item.start === date)
+                if (selectedDayEvent) {
+                    this.selectedOpen = true
+                    this.selectedEvent.day = date
+                    this.selectedEvent.tasks = selectedDayEvent.tasks
+                }
             },
             prev() {
                 this.$refs.calendar.prev()
@@ -267,63 +201,20 @@
             next() {
                 this.$refs.calendar.next()
             },
-            showEvent({nativeEvent, event}) {
-                const open = () => {
-                    this.selectedEvent = event
-                    this.selectedElement = nativeEvent.target
-                    setTimeout(() => this.selectedOpen = true, 10)
-                }
-
-                if (this.selectedOpen) {
-                    this.selectedOpen = false
-                    setTimeout(open, 10)
-                } else {
-                    open()
-                }
-
-                nativeEvent.stopPropagation()
-            },
-            updateRange({start, end}) {
-                const events = []
-
-                const min = new Date(`${start.date}T00:00:00`)
-                const max = new Date(`${end.date}T23:59:59`)
-                const days = (max.getTime() - min.getTime()) / 86400000
-                const eventCount = this.rnd(days, days + 20)
-
-                for (let i = 0; i < eventCount; i++) {
-                    const allDay = this.rnd(0, 3) === 0
-                    const firstTimestamp = this.rnd(min.getTime(), max.getTime())
-                    const first = new Date(firstTimestamp - (firstTimestamp % 900000))
-                    const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
-                    const second = new Date(first.getTime() + secondTimestamp)
-
-                    events.push({
-                        name: this.names[this.rnd(0, this.names.length - 1)],
-                        start: this.formatDate(first, !allDay),
-                        end: this.formatDate(second, !allDay),
-                        color: this.colors[this.rnd(0, this.colors.length - 1)],
-                    })
-                }
-
-                this.start = start
-                this.end = end
-                this.events = events
-            },
-            nth(d) {
-                return d > 3 && d < 21
-                    ? 'th'
-                    : ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th'][d % 10]
-            },
-            rnd(a, b) {
-                return Math.floor((b - a + 1) * Math.random()) + a
-            },
-            formatDate(a, withTime) {
-                return withTime
-                    ? `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()} ${a.getHours()}:${a.getMinutes()}`
-                    : `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()}`
-            },
+            getTasks() {
+                this.tasks = Object.keys(tasks).map(item => {
+                    return {
+                        start: item,
+                        taskCount: tasks[item].taskCount,
+                        tasks: tasks[item].tasks
+                    }
+                })
+            }
         },
+
+        mounted() {
+            this.getTasks()
+        }
     }
 </script>
 
