@@ -11,21 +11,22 @@
                         <v-col>
                             <v-sheet height="80">
                                 <v-toolbar flat color="white">
-                                    <v-toolbar-title>{{$refs.calendar ? $refs.calendar.title : '' }}</v-toolbar-title>
+                                    <v-toolbar-title>{{title}}</v-toolbar-title>
                                     <span class="nf-only-responsible">{{$t('Onlyresponsible')}}</span>
                                     <v-spacer></v-spacer>
                                 </v-toolbar>
                             </v-sheet>
                             <v-sheet height="450">
                                 <v-calendar
+                                        :month-format="monthFormat"
+                                        :weekday-format="weekdayFormat"
                                         v-model="selectedDate"
                                         :locale="$i18n.locale"
                                         ref="calendar"
                                         color="primary"
                                         :events="tasks"
                                         class="task-calendar"
-                                        @click:day="showDayEvent"
-                                >
+                                        @click:day="showDayEvent">
                                     <template #event="{event}">
                                         {{event.taskCount}}
                                     </template>
@@ -138,19 +139,32 @@
                 </div>
             </v-col>
         </v-row>
-        <template>
-            <v-data-table
-                    outline
-                    :items="items"
-                    :items-per-page="5"
-                    class="elevation-1 nf-calendar-table"
-            ></v-data-table>
-        </template>
+        <v-simple-table>
+            <thead>
+            <tr>
+                <th :key="`header${header.value}`"
+                    v-for="header in cardTableHeaders">
+                    {{header.text}}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(item, index) in cardItems"
+                :key="`row${index}`">
+                <td
+                        :key="`item${index}`"
+                        v-for="(header, index) in cardTableHeaders">
+                    {{item[header.value]}}
+                </td>
+            </tr>
+            </tbody>
+        </v-simple-table>
     </v-container>
 </template>
 
 <script>
-    import {tasks} from "../responseExample";
+    import {tasks, cardList} from "../responseExample";
+    import {getMonthByNumber, getWeekDayByNumber} from "../utils/pureFunctions";
 
     export default {
         data() {
@@ -159,10 +173,42 @@
                 selectedEvent: {},
                 selectedOpen: false,
                 tasks: [],
-                items: [],
+                cardItems: [],
+                cardTableHeaders: [
+                    {
+                        text: 'Список картотек',
+                        value: 'listCard'
+                    },
+                    {
+                        text: 'Выполнено',
+                        value: "success"
+                    },
+                    {
+                        text: 'В процессе',
+                        value: 'inProcess'
+                    },
+                    {
+                        text: 'Просроченный',
+                        value: 'overdue'
+                    },
+                    {
+                        text: 'Выполнено с просроченный',
+                        value: 'executedWithPastDue'
+                    }
+                ]
             }
         },
+        watch: {
+            '$store.state.selectedYear'(val) {
+                this.selectedDate = new Date(`${val}-01-01`)
+            },
+        },
         computed: {
+            title() {
+                const year = this.selectedDate.getFullYear()
+                const month = this.$t(getMonthByNumber(this.selectedDate.getMonth() + 1))
+                return `${year} - ${month}`
+            },
             tableTaskHeaders() {
                 return [
                     {
@@ -177,6 +223,12 @@
             }
         },
         methods: {
+            monthFormat({month}) {
+                return this.$t(getMonthByNumber(month))
+            },
+            weekdayFormat({weekday}) {
+                return this.$t(getWeekDayByNumber(weekday))
+            },
             showDayEvent({date}) {
                 const selectedDayEvent = this.tasks.find(item => item.start === date)
                 if (selectedDayEvent) {
@@ -191,6 +243,11 @@
             next() {
                 this.$refs.calendar.next()
             },
+
+            //requests
+            getCardList() {
+                this.cardItems = cardList
+            },
             getTasks() {
                 this.tasks = Object.keys(tasks).map(item => {
                     return {
@@ -204,6 +261,7 @@
 
         mounted() {
             this.getTasks()
+            this.getCardList()
         }
     }
 </script>

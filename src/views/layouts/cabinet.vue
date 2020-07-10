@@ -1,6 +1,6 @@
 <template>
     <v-app id="sandbox">
-        <left-sidebar :options="primaryDrawer" :group.sync="group" />
+        <left-sidebar :options="primaryDrawer" :group.sync="group"/>
         <v-app-bar
                 class="elevation-1"
                 height="75"
@@ -15,7 +15,7 @@
             />
             <v-toolbar-title class="ml-4">
                 <router-link to="/" tag="span" class="pointer">
-                    <img src="@/assets/images/logo.png" alt="" />
+                    <img src="@/assets/images/logo.png" alt=""/>
                 </router-link>
             </v-toolbar-title>
             <v-spacer></v-spacer>
@@ -30,14 +30,10 @@
                 </v-select>
 
 
-                <v-select :items="years" label="2020" single-line>
-                    <!--                   <template v-slot:append>-->
-                    <!--                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"-->
-                    <!--                            id="Capa_1" x="0px" y="0px" width="20px" height="12px" viewBox="0 0 284.929 284.929"-->
-                    <!--                            style="enable-background:new 0 0 284.929 284.929;" xml:space="preserve">-->
-                    <!--                    <path d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441   L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082   c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647   c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"/>-->
-                    <!--                </svg>-->
-                    <!--                   </template>-->
+                <v-select
+                        :value="$store.state.selectedYear"
+                        @change="val => $store.commit('setSelectedYear', val)"
+                        :items="$store.state.years" single-line>
                 </v-select>
                 <div class="nf-header-select-person">
           <span class="nf-header-select-person-icon">
@@ -109,7 +105,8 @@
             <v-list-item class="mt-3">
                 <v-list-item-content>
                     <v-list-item-title class="main-right-sidebar-title"
-                    >Bildirishnomalar</v-list-item-title
+                    >Bildirishnomalar
+                    </v-list-item-title
                     >
                 </v-list-item-content>
             </v-list-item>
@@ -143,6 +140,8 @@
 </template>
 <script>
     import LeftSidebar from "../../components/cabinet/LeftSidebar";
+    import {setLanguageToLocalStorage} from "../../utils/pureFunctions";
+
     export default {
         name: "App",
         data: () => ({
@@ -169,14 +168,7 @@
                     value: "en"
                 }
             ],
-            years: ["2021", "2022", "2023", "2024"]
         }),
-        methods: {
-            setLocale(locale) {
-                localStorage.setItem('lang', locale)
-                console.log(locale)
-            }
-        },
         computed: {
             selectedLanguage() {
                 return this.langs.find(lang => lang.value === this.$i18n.locale);
@@ -186,8 +178,8 @@
             LeftSidebar
         },
         watch: {
-            '$i18n.locale' (val) {
-                this.setLocale(val)
+            '$i18n.locale'(val) {
+                setLanguageToLocalStorage(val)
             }
         },
     };
@@ -226,21 +218,27 @@
             }
         }
     }
+
     .nf-header-burger-wrap {
         display: none;
     }
+
     .main-right-sidebar-text {
         color: #0092c8;
     }
+
     .main-right-sidebar-title {
         font-size: 26px;
     }
+
     .pointer {
         cursor: pointer;
     }
+
     .controls {
         position: relative;
     }
+
     @media screen and (max-width: 1263px) {
         .nf-header-burger-wrap {
             display: block;

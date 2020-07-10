@@ -30,3 +30,28 @@ export const tasks = {
         taskCount: 2
     }
 }
+
+
+export const cardList = [
+    {
+        listCard: 'Protokol (3)',
+        success: 2,
+        inProcess: 1,
+        overdue: 0,
+        executedWithPastDue: 9
+    },
+    {
+        listCard: 'Prikaz (3)',
+        success: 2,
+        inProcess: 1,
+        overdue: 0,
+        executedWithPastDue: 9
+    },
+    {
+        listCard: 'Vse',
+        success: 4,
+        inProcess: 2,
+        overdue: 0,
+        executedWithPastDue: 27
+    }
+]
